@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Pomora: Focus Timer</title>
+    <meta name="description" content="Privacy Policy for Pomora: Focus Timer mobile application. 100% private, local storage only, zero data collection.">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="Privacy Policy - Pomora: Focus Timer">
+    <meta property="og:description" content="Privacy Policy for Pomora: Focus Timer. Your privacy is our top priority. Zero tracking, zero data collection.">
+    <meta property="og:type" content="website">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* ==========================================
+           COLOR PALETTE & DESIGN SYSTEM
+           Brand Palette:
+           - Cream: #F5F3EF
+           - Terracotta: #B3654A
+           - Ink: #28261F
+           ========================================== */
+        :root {
+            --bg-cream: #F5F3EF;
+            --bg-surface: #FFFFFF;
+            --text-ink: #28261F;
+            --text-muted: #625F56;
+            --text-light: #8E8A7E;
+            --brand-terracotta: #B3654A;
+            --brand-terracotta-hover: #9E553C;
+            --brand-terracotta-light: rgba(179, 101, 74, 0.08);
+            --brand-terracotta-border: rgba(179, 101, 74, 0.2);
+            --border-subtle: rgba(40, 38, 31, 0.08);
+            --border-medium: rgba(40, 38, 31, 0.14);
+            --shadow-sm: 0 2px 8px rgba(40, 38, 31, 0.03);
+            --shadow-md: 0 12px 32px -8px rgba(40, 38, 31, 0.06);
+            --shadow-lg: 0 24px 48px -12px rgba(40, 38, 31, 0.08);
+            --radius-sm: 8px;
+            --radius-md: 14px;
+            --radius-lg: 20px;
+            --radius-pill: 9999px;
+            --transition-fast: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+            --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', Roboto, sans-serif;
+        }
+
+        /* Reset & Base Styles */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            background-color: var(--bg-cream);
+            color: var(--text-ink);
+            font-family: var(--font-main);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            color: var(--text-ink);
+            background-color: var(--bg-cream);
+        }
+
+        /* Accessibility Focus Styles */
+        :focus-visible {
+            outline: 2px solid var(--brand-terracotta);
+            outline-offset: 3px;
+        }
+
+        /* Container Layout */
+        .container {
+            width: 100%;
+            max-width: 1080px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ==========================================
+           HEADER / NAVBAR
+           ========================================== */
+        .header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background-color: rgba(245, 243, 239, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border-subtle);
+            padding: 16px 0;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .brand-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--text-ink);
+        }
+
+        .logo-icon {
+            width: 38px;
+            height: 38px;
+            background-color: var(--brand-terracotta);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #FFFFFF;
+            box-shadow: 0 4px 12px rgba(179, 101, 74, 0.25);
+            flex-shrink: 0;
+        }
+
+        .brand-name {
+            font-size: 1.125rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            color: var(--text-ink);
+        }
+
+        .brand-badge {
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 4px 10px;
+            background-color: var(--brand-terracotta-light);
+            color: var(--brand-terracotta);
+            border: 1px solid var(--brand-terracotta-border);
+            border-radius: var(--radius-pill);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .btn-print {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            font-family: var(--font-main);
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--text-ink);
+            background-color: var(--bg-surface);
+            border: 1px solid var(--border-medium);
+            border-radius: var(--radius-pill);
+            cursor: pointer;
+            transition: all var(--transition-fast);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .btn-print:hover {
+            border-color: var(--brand-terracotta);
+            color: var(--brand-terracotta);
+            transform: translateY(-1px);
+        }
+
+        /* ==========================================
+           HERO SECTION
+           ========================================== */
+        .hero {
+            padding: 60px 0 40px 0;
+            text-align: center;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 14px;
+            background-color: var(--brand-terracotta-light);
+            border: 1px solid var(--brand-terracotta-border);
+            border-radius: var(--radius-pill);
+            font-size: 0.8125rem;
+            font-weight: 600;
+            color: var(--brand-terracotta);
+            margin-bottom: 20px;
+        }
+
+        .hero-badge-dot {
+            width: 6px;
+            height: 6px;
+            background-color: var(--brand-terracotta);
+            border-radius: 50%;
+        }
+
+        .hero-title {
+            font-size: 2.75rem;
+            font-weight: 700;
+            line-height: 1.15;
+            letter-spacing: -0.03em;
+            color: var(--text-ink);
+            margin-bottom: 16px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.125rem;
+            color: var(--text-muted);
+            max-width: 620px;
+            margin: 0 auto 24px auto;
+            font-weight: 400;
+        }
+
+        .hero-meta {
+            display: inline-flex;
+            align-items: center;
+            gap: 20px;
+            font-size: 0.875rem;
+            color: var(--text-light);
+            padding: 8px 16px;
+            background-color: rgba(40, 38, 31, 0.03);
+            border-radius: var(--radius-md);
+        }
+
+        .hero-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* ==========================================
+           KEY HIGHLIGHTS CARDS
+           ========================================== */
+        .highlights {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            margin-bottom: 48px;
+        }
+
+        .highlight-card {
+            background-color: var(--bg-surface);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-md);
+            padding: 20px;
+            text-align: left;
+            box-shadow: var(--shadow-sm);
+            transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+        }
+
+        .highlight-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--brand-terracotta-border);
+        }
+
+        .highlight-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            background-color: var(--brand-terracotta-light);
+            color: var(--brand-terracotta);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 12px;
+        }
+
+        .highlight-title {
+            font-size: 0.9375rem;
+            font-weight: 700;
+            color: var(--text-ink);
+            margin-bottom: 4px;
+        }
+
+        .highlight-desc {
+            font-size: 0.8125rem;
+            color: var(--text-muted);
+            line-height: 1.4;
+        }
+
+        /* ==========================================
+           MAIN CONTENT & SIDEBAR LAYOUT
+           ========================================== */
+        .policy-wrapper {
+            display: grid;
+            grid-template-columns: 260px 1fr;
+            gap: 48px;
+            align-items: start;
+            padding-bottom: 80px;
+        }
+
+        /* Sticky Table of Contents */
+        .toc-sidebar {
+            position: sticky;
+            top: 100px;
+            background-color: var(--bg-surface);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-lg);
+            padding: 20px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .toc-title {
+            font-size: 0.8125rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--text-light);
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .toc-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .toc-link {
+            display: block;
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            text-decoration: none;
+            padding: 6px 10px;
+            border-radius: var(--radius-sm);
+            transition: all var(--transition-fast);
+            line-height: 1.4;
+        }
+
+        .toc-link:hover, .toc-link.active {
+            color: var(--brand-terracotta);
+            background-color: var(--brand-terracotta-light);
+            font-weight: 600;
+        }
+
+        /* Document Body */
+        .policy-document {
+            background-color: var(--bg-surface);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-lg);
+            padding: 48px;
+            box-shadow: var(--shadow-md);
+        }
+
+        .section {
+            margin-bottom: 44px;
+            scroll-margin-top: 110px;
+        }
+
+        .section:last-child {
+            margin-bottom: 0;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .section-number {
+            font-size: 0.875rem;
+            font-weight: 700;
+            color: var(--brand-terracotta);
+            background-color: var(--brand-terracotta-light);
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .section-title {
+            font-size: 1.375rem;
+            font-weight: 700;
+            color: var(--text-ink);
+            letter-spacing: -0.02em;
+        }
+
+        .section-content {
+            color: var(--text-muted);
+            font-size: 0.96875rem;
+            line-height: 1.7;
+        }
+
+        .section-content p {
+            margin-bottom: 14px;
+        }
+
+        .section-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .section-content ul {
+            list-style: none;
+            margin: 14px 0;
+            padding-left: 0;
+        }
+
+        .section-content li {
+            position: relative;
+            padding-left: 24px;
+            margin-bottom: 10px;
+            color: var(--text-muted);
+        }
+
+        .section-content li::before {
+            content: "";
+            position: absolute;
+            left: 6px;
+            top: 10px;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background-color: var(--brand-terracotta);
+        }
+
+        /* Callout Box */
+        .callout-box {
+            background-color: var(--brand-terracotta-light);
+            border: 1px solid var(--brand-terracotta-border);
+            border-radius: var(--radius-md);
+            padding: 20px;
+            margin: 20px 0;
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+        }
+
+        .callout-icon {
+            color: var(--brand-terracotta);
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .callout-text {
+            font-size: 0.9375rem;
+            color: var(--text-ink);
+            line-height: 1.6;
+        }
+
+        .callout-text strong {
+            color: var(--brand-terracotta);
+        }
+
+        /* Contact Box Details */
+        .contact-card {
+            background-color: var(--bg-cream);
+            border: 1px solid var(--border-medium);
+            border-radius: var(--radius-md);
+            padding: 28px;
+            margin-top: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-top: 16px;
+        }
+
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: var(--radius-md);
+            background-color: var(--bg-surface);
+            color: var(--brand-terracotta);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow-sm);
+            flex-shrink: 0;
+        }
+
+        .contact-detail-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-light);
+            font-weight: 600;
+        }
+
+        .contact-email-link {
+            font-size: 1.0625rem;
+            font-weight: 700;
+            color: var(--brand-terracotta);
+            text-decoration: none;
+            transition: color var(--transition-fast);
+        }
+
+        .contact-email-link:hover {
+            color: var(--brand-terracotta-hover);
+            text-decoration: underline;
+        }
+
+        /* ==========================================
+           FOOTER
+           ========================================== */
+        .footer {
+            margin-top: auto;
+            background-color: var(--bg-surface);
+            border-top: 1px solid var(--border-subtle);
+            padding: 40px 0;
+            text-align: center;
+            font-size: 0.875rem;
+            color: var(--text-light);
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .footer-brand {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 700;
+            color: var(--text-ink);
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color var(--transition-fast);
+        }
+
+        .footer-links a:hover {
+            color: var(--brand-terracotta);
+        }
+
+        .footer-compliance {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.8125rem;
+            color: var(--text-light);
+            background-color: var(--bg-cream);
+            padding: 4px 12px;
+            border-radius: var(--radius-pill);
+            border: 1px solid var(--border-subtle);
+        }
+
+        /* ==========================================
+           RESPONSIVE MEDIA QUERIES
+           ========================================== */
+        @media (max-width: 992px) {
+            .policy-wrapper {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .toc-sidebar {
+                display: none; /* Hide sidebar on tablet/mobile for cleaner reading */
+            }
+
+            .highlights {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 640px) {
+            .container {
+                padding: 0 16px;
+            }
+
+            .hero {
+                padding: 40px 0 28px 0;
+            }
+
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .highlights {
+                grid-template-columns: 1fr;
+            }
+
+            .policy-document {
+                padding: 24px 20px;
+                border-radius: var(--radius-md);
+            }
+
+            .section-header {
+                gap: 10px;
+            }
+
+            .section-title {
+                font-size: 1.2rem;
+            }
+
+            .section-number {
+                width: 28px;
+                height: 28px;
+                font-size: 0.8125rem;
+            }
+
+            .contact-card {
+                padding: 20px;
+            }
+        }
+
+        /* Print Media Styles */
+        @media print {
+            .header, .toc-sidebar, .btn-print, .footer {
+                display: none !important;
+            }
+
+            body {
+                background-color: #FFFFFF;
+                color: #000000;
+            }
+
+            .container {
+                max-width: 100%;
+                padding: 0;
+            }
+
+            .policy-document {
+                box-shadow: none;
+                border: none;
+                padding: 0;
+            }
+
+            .policy-wrapper {
+                grid-template-columns: 1fr;
+            }
+
+            .section {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER / NAVIGATION -->
+    <header class="header">
+        <div class="container header-content">
+            <a href="#" class="brand-logo" aria-label="Pomora: Focus Timer Home">
+                <div class="logo-icon">
+                    <!-- Custom Pomodoro Clock SVG Icon -->
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="13" r="8"></circle>
+                        <path d="M12 9v4l2.5 2.5"></path>
+                        <path d="M12 2v3"></path>
+                        <path d="M9 3.5c1.5-1 4.5-1 6 0"></path>
+                    </svg>
+                </div>
+                <span class="brand-name">Pomora</span>
+                <span class="brand-badge">Focus Timer</span>
+            </a>
+
+            <div class="header-actions">
+                <button class="btn-print" onclick="window.print()" title="Print or Save as PDF">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 6 2 18 2 18 9"></polyline>
+                        <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+                        <rect x="6" y="14" width="12" height="8"></rect>
+                    </svg>
+                    <span>Print PDF</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTAINER -->
+    <main class="container">
+        <!-- HERO SECTION -->
+        <section class="hero">
+            <div class="hero-badge">
+                <span class="hero-badge-dot"></span>
+                <span>OFFICIAL PRIVACY DOCUMENT</span>
+            </div>
+            <h1 class="hero-title">Privacy Policy</h1>
+            <p class="hero-subtitle">
+                Pomora: Focus Timer is engineered with a strict <strong>privacy-first approach</strong>. 
+                Your focus data stays entirely on your device.
+            </p>
+            <div class="hero-meta">
+                <div class="hero-meta-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                    <span><strong>Effective Date:</strong> August 8, 2026</span>
+                </div>
+                <div class="hero-meta-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                    <span>Google Play Store Compliant</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- HIGHLIGHTS CARDS -->
+        <div class="highlights">
+            <div class="highlight-card">
+                <div class="highlight-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle><line x1="18" y1="8" x2="23" y2="13"></line><line x1="23" y1="8" x2="18" y2="13"></line></svg>
+                </div>
+                <h3 class="highlight-title">No Registration</h3>
+                <p class="highlight-desc">No accounts, emails, passwords, or personal sign-ins required.</p>
+            </div>
+
+            <div class="highlight-card">
+                <div class="highlight-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg>
+                </div>
+                <h3 class="highlight-title">100% Local Storage</h3>
+                <p class="highlight-desc">All timer preferences and stats remain strictly on your smartphone.</p>
+            </div>
+
+            <div class="highlight-card">
+                <div class="highlight-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line></svg>
+                </div>
+                <h3 class="highlight-title">Zero Analytics</h3>
+                <p class="highlight-desc">No ad networks, tracking scripts, or telemetry SDKs installed.</p>
+            </div>
+
+            <div class="highlight-card">
+                <div class="highlight-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path><line x1="1" y1="1" x2="23" y2="23"></line></svg>
+                </div>
+                <h3 class="highlight-title">No Server Transfer</h3>
+                <p class="highlight-desc">We operate no cloud backend; your data never leaves your device.</p>
+            </div>
+        </div>
+
+        <!-- POLICY CONTENT SECTION -->
+        <div class="policy-wrapper">
+            <!-- SIDEBAR TABLE OF CONTENTS -->
+            <aside class="toc-sidebar">
+                <div class="toc-title">Table of Contents</div>
+                <ul class="toc-list">
+                    <li><a href="#header-info" class="toc-link">1. Application Overview</a></li>
+                    <li><a href="#introduction" class="toc-link">2. Introduction</a></li>
+                    <li><a href="#information-collected" class="toc-link">3. Information We Collect</a></li>
+                    <li><a href="#how-we-use" class="toc-link">4. How We Use Information</a></li>
+                    <li><a href="#data-storage" class="toc-link">5. Data Storage & Transfer</a></li>
+                    <li><a href="#third-party" class="toc-link">6. Third Party Services</a></li>
+                    <li><a href="#childrens-privacy" class="toc-link">7. Children's Privacy</a></li>
+                    <li><a href="#security" class="toc-link">8. Security</a></li>
+                    <li><a href="#policy-changes" class="toc-link">9. Policy Changes</a></li>
+                    <li><a href="#contact" class="toc-link">10. Contact Us</a></li>
+                </ul>
+            </aside>
+
+            <!-- DOCUMENT BODY -->
+            <article class="policy-document">
+
+                <!-- SECTION 1: HEADER INFO -->
+                <section id="header-info" class="section">
+                    <div class="section-header">
+                        <span class="section-number">01</span>
+                        <h2 class="section-title">Application Overview</h2>
+                    </div>
+                    <div class="section-content">
+                        <p>This Privacy Policy applies to the mobile application <strong>Pomora: Focus Timer</strong> ("the Application", "the App", "we", "us", or "our").</p>
+                        <ul>
+                            <li><strong>Application Name:</strong> Pomora: Focus Timer</li>
+                            <li><strong>Application Category:</strong> Productivity / Focus Timer / Pomodoro Technique</li>
+                            <li><strong>Primary Purpose:</strong> Helping users manage work/study intervals, boost concentration through the Pomodoro technique, and maximize daily productivity.</li>
+                            <li><strong>Last Updated:</strong> August 8, 2026</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- SECTION 2: INTRODUCTION -->
+                <section id="introduction" class="section">
+                    <div class="section-header">
+                        <span class="section-number">02</span>
+                        <h2 class="section-title">Introduction</h2>
+                    </div>
+                    <div class="section-content">
+                        <p>We respect your fundamental right to privacy. We created <strong>Pomora: Focus Timer</strong> with a core philosophy: a productivity application should help you focus without intruding into your personal life or monitoring your digital habits.</p>
+                        <p>This Privacy Policy clearly details our data practices, confirming our commitment to protecting your privacy when using our application. By installing and using Pomora: Focus Timer, you can enjoy a completely private and standalone Pomodoro experience.</p>
+                        
+                        <div class="callout-box">
+                            <div class="callout-icon">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                            </div>
+                            <div class="callout-text">
+                                <strong>Privacy Guarantee:</strong> Pomora does not collect, record, track, sell, or transmit any of your personal information.
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION 3: INFORMATION WE COLLECT -->
+                <section id="information-collected" class="section">
+                    <div class="section-header">
+                        <span class="section-number">03</span>
+                        <h2 class="section-title">Information We Collect</h2>
+                    </div>
+                    <div class="section-content">
+                        <p>We explicitly state that <strong>Pomora: Focus Timer does NOT collect any personal data</strong>.</p>
+                        
+                        <ul>
+                            <li><strong>No Personal Identifiable Information (PII):</strong> We do not collect names, email addresses, phone numbers, IP addresses, location data, or device identifiers.</li>
+                            <li><strong>No User Account System:</strong> The application operates without user registration, social login, or password creation. You can use all features immediately upon installation without providing any credentials.</li>
+                            <li><strong>Local Application Preferences Only:</strong> The app may store non-personal settings locally on your device (such as your chosen timer durations, sound preferences, theme colors, or total completed focus sessions). This data is strictly non-identifiable and stays exclusively on your physical device.</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- SECTION 4: HOW WE USE INFORMATION -->
+                <section id="how-we-use" class="section">
+                    <div class="section-header">
+                        <span class="section-number">04</span>
+                        <h2 class="section-title">How We Use Information</h2>
+                    </div>
+                    <div class="section-content">
+                        <p>Because we do not gather personal information, we do not use your data for commercial, marketing, or analytical purposes. The locally saved configurations on your device are utilized strictly for:</p>
+                        
+                        <ul>
+                            <li><strong>Providing Core Application Features:</strong> Remembering your custom focus intervals, short breaks, long break durations, and preferred alert sounds.</li>
+                            <li><strong>Local Notifications & Reminders:</strong> Operating local device notifications to alert you when a focus session finishes or when a break starts. Local notifications execute entirely on your operating system without external servers.</li>
+                            <li><strong>Session Statistics:</strong> Displaying your personal focus progress locally on your screen during active usage.</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- SECTION 5: DATA STORAGE & TRANSFER -->
+                <section id="data-storage" class="section">
+                    <div class="section-header">
+                        <span class="section-number">05</span>
+                        <h2 class="section-title">Data Storage & Transfer</h2>
+                    </div>
+                    <div class="section-content">
+                        <p><strong>100% On-Device Local Storage:</strong> All data generated while using Pomora (such as timer configurations and session tallies) is stored exclusively within your device's native local storage (e.g., SharedPreferences on Android).</p>
+                        <p><strong>Zero Server Transmission:</strong> We do not host remote servers or cloud databases for Pomora. Your data is never transmitted over the Internet, backed up to external servers by us, or shared across external networks.</p>
+                        <p><strong>Data Deletion:</strong> Since all data resides locally on your device, uninstalling the Pomora application will permanently remove all associated local preferences and settings from your device immediately.</p>
+                    </div>
+                </section>
+
+                <!-- SECTION 6: THIRD PARTY SERVICES -->
+                <section id="third-party" class="section">
+                    <div class="section-header">
+                        <span class="section-number">06</span>
+                        <h2 class="section-title">Third Party Services</h2>
+                    </div>
+                    <div class="section-content">
+                        <p>To preserve maximum privacy, speed, and battery efficiency, <strong>Pomora does not integrate any third-party SDKs or external services</strong>.</p>
+                        
+                        <ul>
+                            <li><strong>No Advertising SDKs:</strong> No third-party ad networks (such as AdMob or Unity Ads) are included in the application.</li>
+                            <li><strong>No Analytics or Tracking Tools:</strong> No telemetry tools (such as Google Analytics for Firebase, Mixpanel, or Flurry) are utilized to track your app usage.</li>
+                            <li><strong>No Third-Party Data Sharing:</strong> We do not share, sell, trade, or rent any data with third parties, marketing partners, or data brokers.</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- SECTION 7: CHILDREN'S PRIVACY -->
+                <section id="childrens-privacy" class="section">
+                    <div class="section-header">
+                        <span class="section-number">07</span>
+                        <h2 class="section-title">Children's Privacy</h2>
+                    </div>
+                    <div class="section-content">
+                        <p>Pomora: Focus Timer is a general audience productivity utility designed to help anyone improve concentration and time management.</p>
+                        <p>The Application is not directed specifically to children under the age of 13 (or under 16 in certain jurisdictions). Because we do not collect any personal information whatsoever, <strong>we do not knowingly collect personal data from children</strong>.</p>
+                        <p>If you are a parent or guardian and believe your child has provided us with personal information, please contact us at the email address below so we can address your inquiry immediately.</p>
+                    </div>
+                </section>
+
+                <!-- SECTION 8: SECURITY -->
+                <section id="security" class="section">
+                    <div class="section-header">
+                        <span class="section-number">08</span>
+                        <h2 class="section-title">Data Security</h2>
+                    </div>
+                    <div class="section-content">
+                        <p>The security of your privacy is built into our application architecture by design:</p>
+                        <ul>
+                            <li>By storing all application data locally on your device and abstaining from remote cloud servers, we eliminate remote database breach risks.</li>
+                            <li>Your local app data is protected by your mobile device's built-in operating system security sandbox.</li>
+                        </ul>
+                        <p>We recommend keeping your smartphone operating system updated to ensure the continuous security of your device environment.</p>
+                    </div>
+                </section>
+
+                <!-- SECTION 9: CHANGES TO PRIVACY POLICY -->
+                <section id="policy-changes" class="section">
+                    <div class="section-header">
+                        <span class="section-number">09</span>
+                        <h2 class="section-title">Changes to Privacy Policy</h2>
+                    </div>
+                    <div class="section-content">
+                        <p>We may update our Privacy Policy from time to time to reflect future application updates or compliance with evolving legal requirements and Google Play Store policies.</p>
+                        <p>Any updates will be published directly on this page with an updated <strong>"Effective Date"</strong> at the top of the document. We encourage you to review this Privacy Policy periodically to stay informed about how we maintain your privacy.</p>
+                    </div>
+                </section>
+
+                <!-- SECTION 10: CONTACT -->
+                <section id="contact" class="section">
+                    <div class="section-header">
+                        <span class="section-number">10</span>
+                        <h2 class="section-title">Contact Us</h2>
+                    </div>
+                    <div class="section-content">
+                        <p>If you have any questions, suggestions, or concerns regarding this Privacy Policy or the privacy practices of <strong>Pomora: Focus Timer</strong>, please feel free to reach out to us via email:</p>
+                        
+                        <div class="contact-card">
+                            <div class="contact-detail-label">Official Support Email</div>
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                                </div>
+                                <div>
+                                    <a href="mailto:aysenurkaya.dev@gmail.com" class="contact-email-link">aysenurkaya.dev@gmail.com</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </article>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <span>Pomora: Focus Timer</span>
+            </div>
+            <ul class="footer-links">
+                <li><a href="#header-info">Overview</a></li>
+                <li><a href="#information-collected">Data Collection</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">Back to Top ↑</a></li>
+            </ul>
+            <div class="footer-compliance">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                <span>Google Play Developer Policy Compliant Privacy Document</span>
+            </div>
+            <p>&copy; 2026 Pomora. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- OPTIONAL LIGHTWEIGHT SCROLL HIGHLIGHT SCRIPT -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('.section');
+            const navLinks = document.querySelectorAll('.toc-link');
+
+            function highlightNav() {
+                let scrollY = window.pageYOffset;
+
+                sections.forEach(current => {
+                    const sectionHeight = current.offsetHeight;
+                    const sectionTop = current.offsetTop - 140;
+                    const sectionId = current.getAttribute('id');
+
+                    if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+                        navLinks.forEach(link => {
+                            link.classList.remove('active');
+                            if (link.getAttribute('href') === '#' + sectionId) {
+                                link.classList.add('active');
+                            }
+                        });
+                    }
+                });
+            }
+
+            window.addEventListener('scroll', highlightNav);
+        });
+    </script>
+</body>
+</html>
