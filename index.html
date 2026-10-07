@@ -367,6 +367,8 @@
             border-radius: var(--radius-lg);
             padding: 48px;
             box-shadow: var(--shadow-md);
+            /* Uzun e-posta ve bağlantılar dar ekranda satır kırabilsin. */
+            overflow-wrap: anywhere;
         }
 
         .section {
@@ -585,7 +587,8 @@
            ========================================== */
         @media (max-width: 992px) {
             .policy-wrapper {
-                grid-template-columns: 1fr;
+                /* minmax(0, …): sütun içerikten dolayı ekrandan genişlemesin. */
+                grid-template-columns: minmax(0, 1fr);
                 gap: 32px;
             }
 
@@ -735,6 +738,18 @@
 
             .lang-btn {
                 padding: 6px 10px;
+            }
+        }
+
+        /* Çok dar ekranlar (≈320px): dil seçici sığsın diye yazdır butonu
+           gizlenir; yazdırma zaten masaüstü kullanımına yöneliktir. */
+        @media (max-width: 380px) {
+            .btn-print {
+                display: none;
+            }
+
+            .lang-btn {
+                padding: 6px 8px;
             }
         }
 
@@ -973,7 +988,11 @@
                                 <li><strong>Teknik bilgiler:</strong> Bir reklamın sunulması için gereken cihaz türü, işletim sistemi sürümü ve uygulama sürümü gibi.</li>
                             </ul>
                         
-                            <p>Google bu bilgileri reklamları sunmak, reklam performansını ölçmek, dolandırıcılığı ve kötüye kullanımı önlemek ve sorunları tespit etmek için kullanır. Cihaz ayarlarınıza ve bölgenize bağlı olarak reklamlar ilgi alanlarınıza göre kişiselleştirilebilir.</p>
+                            <p>Google bu bilgileri reklamları sunmak, reklam performansını ölçmek, dolandırıcılığı ve kötüye kullanımı önlemek ve sorunları tespit etmek için kullanır. Reklamların ilgi alanlarınıza göre kişiselleştirilip kişiselleştirilmeyeceği; cihaz ayarlarınız, bulunduğunuz bölge ve verdiğiniz onay tercihleri gibi etkenlere bağlı olabilir (aşağıya bakın).</p>
+                            <p><strong>AEA, Birleşik Krallık ve İsviçre’deki kullanıcılar için onay</strong></p>
+                            <p>Avrupa Ekonomik Alanı (AEA), Birleşik Krallık veya İsviçre’deyseniz Pomora, gerekli olduğu durumlarda reklamlar ve veri kullanımıyla ilgili tercihlerinizi sormak için Google’ın onay yönetim aracı olan Google User Messaging Platform’u (UMP) kullanır. Bu durumda uygulamayı açtığınızda Google’ın bir gizlilik mesajı gösterilebilir. Bu mesajda onay vermeyi, onay vermemeyi veya seçeneklerinizi ayrıntılı olarak yönetmeyi seçebilirsiniz.</p>
+                            <p>Pomora, reklam istenip istenemeyeceğine Google’ın onay araçlarının (UMP ve Google Mobile Ads SDK) bildirdiği sonuca göre karar verir. Reklamlar yalnızca bu araçlar reklam istenebileceğini bildirdikten sonra istenir. Seçimlerinize bağlı olarak Google yalnızca kişiselleştirilmemiş veya sınırlı reklamlar gösterebilir ya da hiç reklam gösterilmeyebilir.</p>
+                            <p>Bu mesaj sizin için geçerliyse tercihlerinizi istediğiniz zaman Pomora’da <strong>Ayarlar &gt; Gizlilik &gt; Gizlilik seçenekleri</strong> bölümünden yeniden açıp değiştirebilirsiniz. Bu seçenek yalnızca gerekli olduğu bölgelerde görünür.</p>
                             <p>Geliştirici olarak bu bilgileri sizi tanımlayacak bir biçimde almayız; AdMob bize yalnızca toplu raporlar (örneğin reklam gösterim sayısı ve tahmini kazanç) sunar. <strong>Zamanlayıcı ayarlarınız, oturum geçmişiniz, notlarınız, etiketleriniz ve geri sayımlarınız Google veya başka herhangi bir üçüncü tarafla paylaşılmaz.</strong> Verilerinizi satmayız. Pomora başka bir analiz veya izleme (tracking) SDK’sı içermez.</p>
                         
                             <p>Google’ın verileri nasıl topladığı ve kullandığı hakkında daha fazla bilgi için:</p>
@@ -985,12 +1004,13 @@
                         
                             <p><strong>Gizlilik Tercihleriniz</strong></p>
                             <ul>
+                                <li><strong>Uygulama içi gizlilik seçenekleri (AEA, Birleşik Krallık ve İsviçre):</strong> Onay mesajı sizin için geçerliyse Pomora’da Ayarlar &gt; Gizlilik &gt; Gizlilik seçenekleri bölümünden mesajı yeniden açabilir ve onay tercihlerinizi değiştirebilirsiniz.</li>
                                 <li><strong>Android:</strong> Cihaz ayarlarınızdan Reklam Kimliğinizi sıfırlayabilir veya silebilir ya da kişiselleştirilmiş reklamları devre dışı bırakabilirsiniz (cihazınıza bağlı olarak örneğin Ayarlar &gt; Google &gt; Reklamlar veya Ayarlar &gt; Gizlilik &gt; Reklamlar).</li>
                                 <li><strong>iOS:</strong> Hangi uygulamaların sizi izlemek (tracking) için izin isteyebileceğini Ayarlar &gt; Gizlilik ve Güvenlik &gt; İzleme bölümünden yönetebilirsiniz.</li>
                                 <li><strong>Google reklam ayarları:</strong> Google Hesabınız için reklam kişiselleştirmesini <a href="https://myadcenter.google.com/" target="_blank" rel="noopener noreferrer">Reklam Merkezim (My Ad Center)</a> üzerinden yönetebilirsiniz.</li>
                                 <li><strong>Tüm veri toplamayı durdurma:</strong> Uygulamayı kaldırmak, uygulama ve reklam SDK’sı tarafından yapılan tüm veri toplamayı durdurur.</li>
                             </ul>
-                            <p>Pomora şu anda uygulama içinde kendi onay (consent) veya izleme izni penceresini göstermemektedir. İleride bu tür seçenekler eklersek bu Gizlilik Politikası’nı buna göre güncelleyeceğiz.</p>
+                            <p>Pomora şu anda iOS’ta Apple’ın Uygulama Takip Şeffaflığı (App Tracking Transparency, ATT) iznini istememektedir. Yukarıda açıklanan onay mesajı Google UMP tarafından yönetilir ve Apple’ın ATT isteminden ayrıdır; ATT izni olmadan reklam kimliği (IDFA) uygulamanın kullanımına açılmaz. Bu durum ileride değişirse bu Gizlilik Politikası’nı buna göre güncelleyeceğiz.</p>
                         </div>
                     </section>
 
@@ -1251,7 +1271,11 @@
                                 <li><strong>Technical information:</strong> Such as device type, operating system version, and app version, needed to deliver an ad.</li>
                             </ul>
                         
-                            <p>Google uses this information to deliver ads, to measure ad performance, to prevent fraud and abuse, and to diagnose problems. Depending on your device settings and region, ads may be personalized based on your interests.</p>
+                            <p>Google uses this information to deliver ads, to measure ad performance, to prevent fraud and abuse, and to diagnose problems. Whether ads are personalized based on your interests may depend on factors such as your device settings, your region, and the consent choices you make (see below).</p>
+                            <p><strong>Consent for users in the EEA, the UK, and Switzerland</strong></p>
+                            <p>If you are in the European Economic Area (EEA), the United Kingdom, or Switzerland, Pomora uses Google User Messaging Platform (UMP), a consent management tool provided by Google, to ask for your choices about advertising and data use when this is required. In that case, a Google privacy message may be shown when you open the app. In this message, you can choose to consent, not to consent, or manage your options in more detail.</p>
+                            <p>Pomora relies on the result provided by Google’s consent tools (UMP and the Google Mobile Ads SDK) to decide whether ads may be requested. Ads are only requested after these tools indicate that ads can be requested. Depending on your choices, Google may show only non-personalized or limited ads, or no ads may be shown.</p>
+                            <p>When this applies to you, you can reopen and change your choices at any time in Pomora under <strong>Settings (Ayarlar) &gt; Privacy (Gizlilik) &gt; Privacy options (Gizlilik seçenekleri)</strong>. This option is only shown in regions where it is required.</p>
                             <p>As the developer, we do not receive this information in a form that identifies you; AdMob provides us with aggregated reports (for example, the number of ad impressions and estimated earnings). <strong>Your timer settings, session history, notes, tags, and countdowns are not shared with Google or any other third party.</strong> We do not sell your data. Pomora does not include any other analytics or tracking SDKs.</p>
                         
                             <p>For more information about how Google collects and uses data, please see:</p>
@@ -1263,12 +1287,13 @@
                         
                             <p><strong>Your Privacy Choices</strong></p>
                             <ul>
+                                <li><strong>In-app privacy options (EEA, UK, and Switzerland):</strong> If the consent message applies to you, you can reopen it and change your consent choices in Pomora under Settings (Ayarlar) &gt; Privacy (Gizlilik) &gt; Privacy options (Gizlilik seçenekleri).</li>
                                 <li><strong>Android:</strong> You can reset or delete your Advertising ID, or opt out of ads personalization, in your device settings (for example, Settings &gt; Google &gt; Ads, or Settings &gt; Privacy &gt; Ads, depending on your device).</li>
                                 <li><strong>iOS:</strong> You can manage which apps may request to track you under Settings &gt; Privacy &amp; Security &gt; Tracking.</li>
                                 <li><strong>Google ad settings:</strong> You can manage ad personalization for your Google Account at <a href="https://myadcenter.google.com/" target="_blank" rel="noopener noreferrer">My Ad Center</a>.</li>
                                 <li><strong>Stop all collection:</strong> Uninstalling the app stops all data collection by the app and the advertising SDK.</li>
                             </ul>
-                            <p>Pomora does not currently display its own in-app consent or tracking permission dialog. If we add such options in the future, we will update this Privacy Policy accordingly.</p>
+                            <p>Pomora does not currently request Apple’s App Tracking Transparency (ATT) permission on iOS. The consent message described above is managed by Google UMP and is separate from Apple’s ATT prompt; without ATT permission, the advertising identifier (IDFA) is not made available to the app. If this changes in the future, we will update this Privacy Policy accordingly.</p>
                         </div>
                     </section>
 
