@@ -1,15 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - Pomora: Focus Timer</title>
-    <meta name="description" content="Privacy Policy for Pomora: Focus Timer mobile application. 100% private, local storage only, zero data collection.">
+    <title>Gizlilik Politikası - Pomora: Focus Timer</title>
+    <script>
+        // Dil, ilk çizimden önce belirlenir; böylece yanlış dil bir an bile görünmez.
+        (function () {
+            var lang = 'tr';
+            try {
+                var saved = localStorage.getItem('pomora-privacy-lang');
+                if (saved === 'tr' || saved === 'en') lang = saved;
+            } catch (e) { /* localStorage kullanılamıyor: varsayılan dil */ }
+            document.documentElement.lang = lang;
+            if (lang === 'en') document.title = 'Privacy Policy - Pomora: Focus Timer';
+        })();
+    </script>
+    <meta name="description" content="Privacy Policy for the Pomora: Focus Timer mobile app on Android and iOS. Focus data is stored on your device; ads are provided by Google AdMob.">
     <meta name="robots" content="index, follow">
     
     <!-- Open Graph / Social Media -->
     <meta property="og:title" content="Privacy Policy - Pomora: Focus Timer">
-    <meta property="og:description" content="Privacy Policy for Pomora: Focus Timer. Your privacy is our top priority. Zero tracking, zero data collection.">
+    <meta property="og:description" content="Privacy Policy for Pomora: Focus Timer. Your focus data stays on your device. Ads are provided by Google AdMob.">
     <meta property="og:type" content="website">
 
     <!-- Fonts -->
@@ -657,6 +669,80 @@
                 page-break-inside: avoid;
             }
         }
+        /* ==========================================
+           LANGUAGE SWITCHER
+           ========================================== */
+        html[lang="tr"] [data-lang="en"],
+        html[lang="en"] [data-lang="tr"] {
+            display: none !important;
+        }
+
+        .lang-switch {
+            display: inline-flex;
+            align-items: center;
+            gap: 2px;
+            padding: 3px;
+            background-color: var(--bg-surface);
+            border: 1px solid var(--border-medium);
+            border-radius: var(--radius-pill);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .lang-btn {
+            font-family: var(--font-main);
+            font-size: 0.8125rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            background: transparent;
+            border: none;
+            border-radius: var(--radius-pill);
+            padding: 6px 12px;
+            min-height: 32px;
+            cursor: pointer;
+            transition: all var(--transition-fast);
+        }
+
+        .lang-btn:hover {
+            color: var(--brand-terracotta);
+        }
+
+        .lang-btn[aria-pressed="true"] {
+            background-color: var(--brand-terracotta);
+            color: #FFFFFF;
+        }
+
+        .lang-sep {
+            color: var(--text-light);
+            font-size: 0.8125rem;
+        }
+
+        @media (max-width: 640px) {
+            .brand-badge {
+                display: none;
+            }
+
+            .btn-print {
+                padding: 8px 10px;
+            }
+
+            .btn-print .btn-print-label {
+                display: none;
+            }
+
+            .header-actions {
+                gap: 8px;
+            }
+
+            .lang-btn {
+                padding: 6px 10px;
+            }
+        }
+
+        @media print {
+            .lang-switch {
+                display: none !important;
+            }
+        }
     </style>
 </head>
 <body>
@@ -679,13 +765,18 @@
             </a>
 
             <div class="header-actions">
-                <button class="btn-print" onclick="window.print()" title="Print or Save as PDF">
+                <div class="lang-switch" role="group" aria-label="Dil / Language">
+                    <button type="button" class="lang-btn" data-set-lang="tr" lang="tr" aria-pressed="true">Türkçe</button>
+                    <span class="lang-sep" aria-hidden="true">|</span>
+                    <button type="button" class="lang-btn" data-set-lang="en" lang="en" aria-pressed="false">English</button>
+                </div>
+                <button class="btn-print" onclick="window.print()" title="Yazdır veya PDF olarak kaydet" aria-label="Yazdır veya PDF olarak kaydet">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <polyline points="6 9 6 2 18 2 18 9"></polyline>
                         <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
                         <rect x="6" y="14" width="12" height="8"></rect>
                     </svg>
-                    <span>Print PDF</span>
+                    <span class="btn-print-label"><span data-lang="tr">PDF Yazdır</span><span data-lang="en">Print PDF</span></span>
                 </button>
             </div>
         </div>
@@ -693,273 +784,599 @@
 
     <!-- MAIN CONTAINER -->
     <main class="container">
-        <!-- HERO SECTION -->
-        <section class="hero">
-            <div class="hero-badge">
-                <span class="hero-badge-dot"></span>
-                <span>OFFICIAL PRIVACY DOCUMENT</span>
-            </div>
-            <h1 class="hero-title">Privacy Policy</h1>
-            <p class="hero-subtitle">
-                Pomora: Focus Timer is engineered with a strict <strong>privacy-first approach</strong>. 
-                Your focus data stays entirely on your device.
-            </p>
-            <div class="hero-meta">
-                <div class="hero-meta-item">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-                    <span><strong>Effective Date:</strong> August 8, 2026</span>
+        <div data-lang="tr" lang="tr">
+            <!-- HERO SECTION -->
+            <section class="hero">
+                <div class="hero-badge">
+                    <span class="hero-badge-dot"></span>
+                    <span>RESMİ GİZLİLİK BELGESİ</span>
                 </div>
-                <div class="hero-meta-item">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-                    <span>Google Play Store Compliant</span>
-                </div>
-            </div>
-        </section>
-
-        <!-- HIGHLIGHTS CARDS -->
-        <div class="highlights">
-            <div class="highlight-card">
-                <div class="highlight-icon">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle><line x1="18" y1="8" x2="23" y2="13"></line><line x1="23" y1="8" x2="18" y2="13"></line></svg>
-                </div>
-                <h3 class="highlight-title">No Registration</h3>
-                <p class="highlight-desc">No accounts, emails, passwords, or personal sign-ins required.</p>
-            </div>
-
-            <div class="highlight-card">
-                <div class="highlight-icon">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg>
-                </div>
-                <h3 class="highlight-title">100% Local Storage</h3>
-                <p class="highlight-desc">All timer preferences and stats remain strictly on your smartphone.</p>
-            </div>
-
-            <div class="highlight-card">
-                <div class="highlight-icon">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line></svg>
-                </div>
-                <h3 class="highlight-title">Zero Analytics</h3>
-                <p class="highlight-desc">No ad networks, tracking scripts, or telemetry SDKs installed.</p>
-            </div>
-
-            <div class="highlight-card">
-                <div class="highlight-icon">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path><line x1="1" y1="1" x2="23" y2="23"></line></svg>
-                </div>
-                <h3 class="highlight-title">No Server Transfer</h3>
-                <p class="highlight-desc">We operate no cloud backend; your data never leaves your device.</p>
-            </div>
-        </div>
-
-        <!-- POLICY CONTENT SECTION -->
-        <div class="policy-wrapper">
-            <!-- SIDEBAR TABLE OF CONTENTS -->
-            <aside class="toc-sidebar">
-                <div class="toc-title">Table of Contents</div>
-                <ul class="toc-list">
-                    <li><a href="#header-info" class="toc-link">1. Application Overview</a></li>
-                    <li><a href="#introduction" class="toc-link">2. Introduction</a></li>
-                    <li><a href="#information-collected" class="toc-link">3. Information We Collect</a></li>
-                    <li><a href="#how-we-use" class="toc-link">4. How We Use Information</a></li>
-                    <li><a href="#data-storage" class="toc-link">5. Data Storage & Transfer</a></li>
-                    <li><a href="#third-party" class="toc-link">6. Third Party Services</a></li>
-                    <li><a href="#childrens-privacy" class="toc-link">7. Children's Privacy</a></li>
-                    <li><a href="#security" class="toc-link">8. Security</a></li>
-                    <li><a href="#policy-changes" class="toc-link">9. Policy Changes</a></li>
-                    <li><a href="#contact" class="toc-link">10. Contact Us</a></li>
-                </ul>
-            </aside>
-
-            <!-- DOCUMENT BODY -->
-            <article class="policy-document">
-
-                <!-- SECTION 1: HEADER INFO -->
-                <section id="header-info" class="section">
-                    <div class="section-header">
-                        <span class="section-number">01</span>
-                        <h2 class="section-title">Application Overview</h2>
+                <h1 class="hero-title">Gizlilik Politikası</h1>
+                <p class="hero-subtitle">
+                    Pomora: Focus Timer, <strong>gizlilik öncelikli bir yaklaşımla</strong> geliştirilmiştir.
+                    Odak verileriniz cihazınızda kalır. Uygulama, Google AdMob tarafından sağlanan reklamlar gösterir.
+                </p>
+                <div class="hero-meta">
+                    <div class="hero-meta-item">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                        <span><strong>Yürürlük Tarihi:</strong> 7 Ekim 2026</span>
                     </div>
-                    <div class="section-content">
-                        <p>This Privacy Policy applies to the mobile application <strong>Pomora: Focus Timer</strong> ("the Application", "the App", "we", "us", or "our").</p>
-                        <ul>
-                            <li><strong>Application Name:</strong> Pomora: Focus Timer</li>
-                            <li><strong>Application Category:</strong> Productivity / Focus Timer / Pomodoro Technique</li>
-                            <li><strong>Primary Purpose:</strong> Helping users manage work/study intervals, boost concentration through the Pomodoro technique, and maximize daily productivity.</li>
-                            <li><strong>Last Updated:</strong> August 8, 2026</li>
-                        </ul>
+                    <div class="hero-meta-item">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                        <span>Android ve iOS için geçerlidir</span>
                     </div>
-                </section>
+                </div>
+            </section>
 
-                <!-- SECTION 2: INTRODUCTION -->
-                <section id="introduction" class="section">
-                    <div class="section-header">
-                        <span class="section-number">02</span>
-                        <h2 class="section-title">Introduction</h2>
+            <!-- HIGHLIGHTS CARDS -->
+            <div class="highlights">
+                <div class="highlight-card">
+                    <div class="highlight-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle><line x1="18" y1="8" x2="23" y2="13"></line><line x1="23" y1="8" x2="18" y2="13"></line></svg>
                     </div>
-                    <div class="section-content">
-                        <p>We respect your fundamental right to privacy. We created <strong>Pomora: Focus Timer</strong> with a core philosophy: a productivity application should help you focus without intruding into your personal life or monitoring your digital habits.</p>
-                        <p>This Privacy Policy clearly details our data practices, confirming our commitment to protecting your privacy when using our application. By installing and using Pomora: Focus Timer, you can enjoy a completely private and standalone Pomodoro experience.</p>
-                        
-                        <div class="callout-box">
-                            <div class="callout-icon">
-                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
-                            </div>
-                            <div class="callout-text">
-                                <strong>Privacy Guarantee:</strong> Pomora does not collect, record, track, sell, or transmit any of your personal information.
-                            </div>
+                    <h3 class="highlight-title">Kayıt Gerekmez</h3>
+                    <p class="highlight-desc">Hesap, e-posta, şifre veya kişisel oturum açma gerekmez.</p>
+                </div>
+
+                <div class="highlight-card">
+                    <div class="highlight-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg>
+                    </div>
+                    <h3 class="highlight-title">%100 Yerel Depolama</h3>
+                    <p class="highlight-desc">Ayarlarınız, oturumlarınız, notlarınız ve geri sayımlarınız yalnızca cihazınızda saklanır.</p>
+                </div>
+
+                <div class="highlight-card">
+                    <div class="highlight-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line></svg>
+                    </div>
+                    <h3 class="highlight-title">Google AdMob Reklamları</h3>
+                    <p class="highlight-desc">Reklamlar, bazı cihaz verilerini işleyen Google AdMob tarafından sunulur. Bkz. Bölüm 6.</p>
+                </div>
+
+                <div class="highlight-card">
+                    <div class="highlight-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path><line x1="1" y1="1" x2="23" y2="23"></line></svg>
+                    </div>
+                    <h3 class="highlight-title">Pomora Sunucusu Yok</h3>
+                    <p class="highlight-desc">Bir sunucu altyapımız yoktur; odak verileriniz tarafımızdan hiçbir zaman yüklenmez.</p>
+                </div>
+            </div>
+
+            <!-- POLICY CONTENT SECTION -->
+            <div class="policy-wrapper">
+                <!-- SIDEBAR TABLE OF CONTENTS -->
+                <aside class="toc-sidebar">
+                    <div class="toc-title">İçindekiler</div>
+                    <ul class="toc-list">
+                        <li><a href="#tr-header-info" class="toc-link">1. Uygulama Hakkında</a></li>
+                        <li><a href="#tr-introduction" class="toc-link">2. Giriş</a></li>
+                        <li><a href="#tr-information-collected" class="toc-link">3. Toplanan Bilgiler</a></li>
+                        <li><a href="#tr-how-we-use" class="toc-link">4. Bilgilerin Kullanımı</a></li>
+                        <li><a href="#tr-data-storage" class="toc-link">5. Veri Depolama ve Aktarım</a></li>
+                        <li><a href="#tr-third-party" class="toc-link">6. Reklamlar ve Üçüncü Taraflar</a></li>
+                        <li><a href="#tr-childrens-privacy" class="toc-link">7. Çocukların Gizliliği</a></li>
+                        <li><a href="#tr-security" class="toc-link">8. Güvenlik</a></li>
+                        <li><a href="#tr-policy-changes" class="toc-link">9. Politika Değişiklikleri</a></li>
+                        <li><a href="#tr-contact" class="toc-link">10. İletişim</a></li>
+                    </ul>
+                </aside>
+
+                <!-- DOCUMENT BODY -->
+                <article class="policy-document">
+
+                    <!-- SECTION 1: HEADER INFO -->
+                    <section id="tr-header-info" class="section">
+                        <div class="section-header">
+                            <span class="section-number">01</span>
+                            <h2 class="section-title">Uygulama Hakkında</h2>
                         </div>
-                    </div>
-                </section>
+                        <div class="section-content">
+                            <p>Bu Gizlilik Politikası, <strong>Pomora: Focus Timer</strong> mobil uygulaması (“Uygulama”, “biz”, “bize” veya “bizim”) için geçerlidir.</p>
+                            <ul>
+                                <li><strong>Uygulama Adı:</strong> Pomora: Focus Timer</li>
+                                <li><strong>Uygulama Kategorisi:</strong> Verimlilik / Odak Zamanlayıcısı / Pomodoro Tekniği</li>
+                                <li><strong>Temel Amaç:</strong> Kullanıcıların çalışma/ders aralıklarını yönetmesine, Pomodoro tekniğiyle odaklanmasını artırmasına ve günlük verimliliğini en üst düzeye çıkarmasına yardımcı olmak.</li>
+                                <li><strong>Platformlar:</strong> Android (Google Play) ve iOS (App Store)</li>
+                                <li><strong>Son Güncelleme:</strong> 7 Ekim 2026</li>
+                            </ul>
+                        </div>
+                    </section>
 
-                <!-- SECTION 3: INFORMATION WE COLLECT -->
-                <section id="information-collected" class="section">
-                    <div class="section-header">
-                        <span class="section-number">03</span>
-                        <h2 class="section-title">Information We Collect</h2>
-                    </div>
-                    <div class="section-content">
-                        <p>We explicitly state that <strong>Pomora: Focus Timer does NOT collect any personal data</strong>.</p>
+                    <!-- SECTION 2: INTRODUCTION -->
+                    <section id="tr-introduction" class="section">
+                        <div class="section-header">
+                            <span class="section-number">02</span>
+                            <h2 class="section-title">Giriş</h2>
+                        </div>
+                        <div class="section-content">
+                            <p>Temel gizlilik hakkınıza saygı duyuyoruz. <strong>Pomora: Focus Timer</strong>’ı şu temel anlayışla geliştirdik: Bir verimlilik uygulaması, kişisel hayatınıza müdahale etmeden veya dijital alışkanlıklarınızı izlemeden odaklanmanıza yardımcı olmalıdır.</p>
+                            <p>Bu Gizlilik Politikası; uygulamanın hangi verileri sakladığını, uygulamaya entegre edilmiş üçüncü taraf reklam hizmeti (Google AdMob) tarafından hangi verilerin işlendiğini ve sahip olduğunuz seçenekleri açıklar.</p>
                         
-                        <ul>
-                            <li><strong>No Personal Identifiable Information (PII):</strong> We do not collect names, email addresses, phone numbers, IP addresses, location data, or device identifiers.</li>
-                            <li><strong>No User Account System:</strong> The application operates without user registration, social login, or password creation. You can use all features immediately upon installation without providing any credentials.</li>
-                            <li><strong>Local Application Preferences Only:</strong> The app may store non-personal settings locally on your device (such as your chosen timer durations, sound preferences, theme colors, or total completed focus sessions). This data is strictly non-identifiable and stays exclusively on your physical device.</li>
-                        </ul>
-                    </div>
-                </section>
-
-                <!-- SECTION 4: HOW WE USE INFORMATION -->
-                <section id="how-we-use" class="section">
-                    <div class="section-header">
-                        <span class="section-number">04</span>
-                        <h2 class="section-title">How We Use Information</h2>
-                    </div>
-                    <div class="section-content">
-                        <p>Because we do not gather personal information, we do not use your data for commercial, marketing, or analytical purposes. The locally saved configurations on your device are utilized strictly for:</p>
-                        
-                        <ul>
-                            <li><strong>Providing Core Application Features:</strong> Remembering your custom focus intervals, short breaks, long break durations, and preferred alert sounds.</li>
-                            <li><strong>Local Notifications & Reminders:</strong> Operating local device notifications to alert you when a focus session finishes or when a break starts. Local notifications execute entirely on your operating system without external servers.</li>
-                            <li><strong>Session Statistics:</strong> Displaying your personal focus progress locally on your screen during active usage.</li>
-                        </ul>
-                    </div>
-                </section>
-
-                <!-- SECTION 5: DATA STORAGE & TRANSFER -->
-                <section id="data-storage" class="section">
-                    <div class="section-header">
-                        <span class="section-number">05</span>
-                        <h2 class="section-title">Data Storage & Transfer</h2>
-                    </div>
-                    <div class="section-content">
-                        <p><strong>100% On-Device Local Storage:</strong> All data generated while using Pomora (such as timer configurations and session tallies) is stored exclusively within your device's native local storage (e.g., SharedPreferences on Android).</p>
-                        <p><strong>Zero Server Transmission:</strong> We do not host remote servers or cloud databases for Pomora. Your data is never transmitted over the Internet, backed up to external servers by us, or shared across external networks.</p>
-                        <p><strong>Data Deletion:</strong> Since all data resides locally on your device, uninstalling the Pomora application will permanently remove all associated local preferences and settings from your device immediately.</p>
-                    </div>
-                </section>
-
-                <!-- SECTION 6: THIRD PARTY SERVICES -->
-                <section id="third-party" class="section">
-                    <div class="section-header">
-                        <span class="section-number">06</span>
-                        <h2 class="section-title">Third Party Services</h2>
-                    </div>
-                    <div class="section-content">
-                        <p>To preserve maximum privacy, speed, and battery efficiency, <strong>Pomora does not integrate any third-party SDKs or external services</strong>.</p>
-                        
-                        <ul>
-                            <li><strong>No Advertising SDKs:</strong> No third-party ad networks (such as AdMob or Unity Ads) are included in the application.</li>
-                            <li><strong>No Analytics or Tracking Tools:</strong> No telemetry tools (such as Google Analytics for Firebase, Mixpanel, or Flurry) are utilized to track your app usage.</li>
-                            <li><strong>No Third-Party Data Sharing:</strong> We do not share, sell, trade, or rent any data with third parties, marketing partners, or data brokers.</li>
-                        </ul>
-                    </div>
-                </section>
-
-                <!-- SECTION 7: CHILDREN'S PRIVACY -->
-                <section id="childrens-privacy" class="section">
-                    <div class="section-header">
-                        <span class="section-number">07</span>
-                        <h2 class="section-title">Children's Privacy</h2>
-                    </div>
-                    <div class="section-content">
-                        <p>Pomora: Focus Timer is a general audience productivity utility designed to help anyone improve concentration and time management.</p>
-                        <p>The Application is not directed specifically to children under the age of 13 (or under 16 in certain jurisdictions). Because we do not collect any personal information whatsoever, <strong>we do not knowingly collect personal data from children</strong>.</p>
-                        <p>If you are a parent or guardian and believe your child has provided us with personal information, please contact us at the email address below so we can address your inquiry immediately.</p>
-                    </div>
-                </section>
-
-                <!-- SECTION 8: SECURITY -->
-                <section id="security" class="section">
-                    <div class="section-header">
-                        <span class="section-number">08</span>
-                        <h2 class="section-title">Data Security</h2>
-                    </div>
-                    <div class="section-content">
-                        <p>The security of your privacy is built into our application architecture by design:</p>
-                        <ul>
-                            <li>By storing all application data locally on your device and abstaining from remote cloud servers, we eliminate remote database breach risks.</li>
-                            <li>Your local app data is protected by your mobile device's built-in operating system security sandbox.</li>
-                        </ul>
-                        <p>We recommend keeping your smartphone operating system updated to ensure the continuous security of your device environment.</p>
-                    </div>
-                </section>
-
-                <!-- SECTION 9: CHANGES TO PRIVACY POLICY -->
-                <section id="policy-changes" class="section">
-                    <div class="section-header">
-                        <span class="section-number">09</span>
-                        <h2 class="section-title">Changes to Privacy Policy</h2>
-                    </div>
-                    <div class="section-content">
-                        <p>We may update our Privacy Policy from time to time to reflect future application updates or compliance with evolving legal requirements and Google Play Store policies.</p>
-                        <p>Any updates will be published directly on this page with an updated <strong>"Effective Date"</strong> at the top of the document. We encourage you to review this Privacy Policy periodically to stay informed about how we maintain your privacy.</p>
-                    </div>
-                </section>
-
-                <!-- SECTION 10: CONTACT -->
-                <section id="contact" class="section">
-                    <div class="section-header">
-                        <span class="section-number">10</span>
-                        <h2 class="section-title">Contact Us</h2>
-                    </div>
-                    <div class="section-content">
-                        <p>If you have any questions, suggestions, or concerns regarding this Privacy Policy or the privacy practices of <strong>Pomora: Focus Timer</strong>, please feel free to reach out to us via email:</p>
-                        
-                        <div class="contact-card">
-                            <div class="contact-detail-label">Official Support Email</div>
-                            <div class="contact-item">
-                                <div class="contact-icon">
-                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                            <div class="callout-box">
+                                <div class="callout-icon">
+                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
                                 </div>
-                                <div>
-                                    <a href="mailto:aysenurkaya.dev@gmail.com" class="contact-email-link">aysenurkaya.dev@gmail.com</a>
+                                <div class="callout-text">
+                                    <strong>Kısaca:</strong> Pomora’da hesap sistemi yoktur ve adınızı, e-posta adresinizi veya diğer kişisel bilgilerinizi toplamayız. Odak verileriniz yalnızca cihazınızda saklanır. Uygulama, Google AdMob tarafından sağlanan reklamlar gösterir ve Google, Bölüm 6’da açıklandığı şekilde bazı cihaz bilgilerini işleyebilir.
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </section>
+                    </section>
 
-            </article>
-        </div>
+                    <!-- SECTION 3: INFORMATION WE COLLECT -->
+                    <section id="tr-information-collected" class="section">
+                        <div class="section-header">
+                            <span class="section-number">03</span>
+                            <h2 class="section-title">Toplanan Bilgiler</h2>
+                        </div>
+                        <div class="section-content">
+                            <p>Pomora bir hesap gerektirmez ve <strong>geliştirici olarak biz</strong> adınız, e-posta adresiniz veya telefon numaranız gibi <strong>kişisel verileri toplamayız</strong>. Uygulamayla ilgili bilgiler aşağıdaki kategorilere ayrılır:</p>
+                        
+                            <ul>
+                                <li><strong>Yalnızca cihazınızda saklanan veriler:</strong> Zamanlayıcı süreleri ve tercihleri (ses, titreşim, otomatik başlatma), odak oturumu geçmişiniz (başlangıç ve bitiş saatleri, odaklanılan süre, tamamlanan turlar), oturum notları, günlük notlar, ders etiketleri ve sınav ya da özel geri sayımlar. Bu veriler sizin tarafınızdan oluşturulur, cihazınızda kalır ve bizim erişimimize açık değildir.</li>
+                                <li><strong>Kullanıcı Hesabı Yoktur:</strong> Uygulama; kullanıcı kaydı, sosyal hesapla giriş veya şifre oluşturma olmadan çalışır. Herhangi bir kimlik bilgisi vermeden, kurulumdan hemen sonra tüm özellikleri kullanabilirsiniz.</li>
+                                <li><strong>Google AdMob tarafından işlenen veriler:</strong> Uygulamaya entegre edilmiş reklam SDK’sı, reklamları göstermek ve ölçmek için bazı cihaz bilgilerini (cihaz ve reklam kimlikleri, IP adresi, reklam etkileşimleri ve tanılama verileri gibi) doğrudan cihazınızdan toplar. Bu konu Bölüm 6’da ayrıntılı olarak açıklanmıştır.</li>
+                                <li><strong>Cihaz izinleri:</strong> Uygulama, yalnızca bir odak oturumu veya mola sona erdiğinde yerel uyarı göstermek için kullanılan bildirim izni ister. Pomora; kameranıza, mikrofonunuza, kişilerinize, fotoğraflarınıza veya kesin konumunuza erişim istemez.</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <!-- SECTION 4: HOW WE USE INFORMATION -->
+                    <section id="tr-how-we-use" class="section">
+                        <div class="section-header">
+                            <span class="section-number">04</span>
+                            <h2 class="section-title">Bilgilerin Kullanımı</h2>
+                        </div>
+                        <div class="section-content">
+                            <p>Cihazınızda yerel olarak saklanan veriler yalnızca uygulamanın özelliklerini sunmak için kullanılır. Bu verileri pazarlama veya analiz amacıyla kullanmayız ve reklamverenlerle paylaşılmaz. Bu veriler şu amaçlarla kullanılır:</p>
+                        
+                            <ul>
+                                <li><strong>Temel Uygulama Özelliklerinin Sunulması:</strong> Özel odak aralıklarınızı, kısa mola ve uzun mola sürelerinizi ve tercih ettiğiniz uyarı seslerini hatırlamak.</li>
+                                <li><strong>Yerel Bildirimler ve Hatırlatıcılar:</strong> Bir odak oturumu bittiğinde veya mola başladığında sizi uyarmak için yerel cihaz bildirimlerini çalıştırmak. Yerel bildirimler, harici sunucular olmadan tamamen işletim sisteminiz üzerinde çalışır.</li>
+                                <li><strong>Oturum İstatistikleri:</strong> Kişisel odak ilerlemenizi kullanım sırasında yerel olarak ekranınızda göstermek.</li>
+                                <li><strong>Notlar, Etiketler ve Geri Sayımlar:</strong> Oluşturduğunuz notları, ders etiketlerini ve sınav ya da özel geri sayımları göstermek.</li>
+                                <li><strong>Reklamlar:</strong> Reklamlar, uygulamanın ücretsiz kullanımını desteklemek için gösterilir. Reklam amacıyla kullanılan veriler bizim tarafımızdan değil, Google AdMob tarafından toplanır ve işlenir (bkz. Bölüm 6).</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <!-- SECTION 5: DATA STORAGE & TRANSFER -->
+                    <section id="tr-data-storage" class="section">
+                        <div class="section-header">
+                            <span class="section-number">05</span>
+                            <h2 class="section-title">Veri Depolama ve Aktarım</h2>
+                        </div>
+                        <div class="section-content">
+                            <p><strong>%100 Cihaz İçi Yerel Depolama:</strong> Pomora’yı kullanırken oluşan tüm veriler (zamanlayıcı ayarları ve oturum kayıtları gibi) yalnızca uygulamanın cihazınızdaki yerel depolama alanında (cihaz içi bir veritabanı ve uygulama tercihleri deposu) saklanır.</p>
+                            <p><strong>Pomora Sunucusu Yoktur:</strong> Pomora için uzak sunucu veya bulut veritabanı barındırmayız. Odak verileriniz, notlarınız, etiketleriniz ve geri sayımlarınız tarafımızdan internet üzerinden aktarılmaz veya harici sunuculara yedeklenmez. Cihazınızın işletim sistemi, kendi cihaz ayarlarınıza bağlı olarak uygulama verilerini cihaz yedeklerine (örneğin iCloud veya Google yedekleri) dahil edebilir.</p>
+                            <p><strong>Reklam Ağı İstekleri:</strong> Uygulamanın gerçekleştirdiği tek ağ iletişimi, reklamları talep etmek, göstermek ve ölçmek için Google Mobile Ads SDK tarafından yapılır. Bu süreçte Google’a gönderilen veriler Bölüm 6’da açıklanmıştır.</p>
+                            <p><strong>Verilerin Silinmesi:</strong> Odak verileriniz cihazınızda yerel olarak bulunduğundan, Pomora uygulamasını kaldırmak uygulamanın yerel verilerini cihazınızdan siler. Google tarafından reklam amacıyla daha önce işlenmiş veriler Google’ın Gizlilik Politikası’na tabidir; bu verileri Bölüm 6’daki seçeneklerle yönetebilirsiniz.</p>
+                        </div>
+                    </section>
+
+                    <!-- SECTION 6: THIRD PARTY SERVICES -->
+                    <section id="tr-third-party" class="section">
+                        <div class="section-header">
+                            <span class="section-number">06</span>
+                            <h2 class="section-title">Reklamlar ve Üçüncü Taraf Hizmetler</h2>
+                        </div>
+                        <div class="section-content">
+                            <p>Pomora, Google LLC tarafından sağlanan bir hizmet olan <strong>Google AdMob</strong> (Google Mobile Ads SDK) aracılığıyla tam ekran (geçiş/interstitial) reklamlar gösterir. Bir odak oturumunu tamamladıktan sonra özet ekranından çıktığınızda veya bir oturumu erken bitirmek istediğinizi onayladığınızda reklam gösterilebilir. Google AdMob, uygulamaya entegre edilmiş tek üçüncü taraf hizmettir.</p>
+                            <p>Reklamlar talep edilip gösterildiğinde Google Mobile Ads SDK, bazı bilgileri doğrudan cihazınızdan toplar ve Google’a gönderir. Google’ın belgelerine göre bu bilgiler şunları içerebilir:</p>
+                        
+                            <ul>
+                                <li><strong>Cihaz ve reklam kimlikleri:</strong> Android’de Reklam Kimliği (Advertising ID) ve uygulama grubu kimliği (app set ID). iOS’ta satıcı kimliği (IDFV). iOS’ta reklam kimliği (IDFA), yalnızca Apple’ın Uygulama Takip Şeffaflığı (App Tracking Transparency) istemi aracılığıyla izin vermeniz halinde bir uygulamanın kullanımına açılır; Pomora şu anda bu istemi göstermemektedir.</li>
+                                <li><strong>IP adresi:</strong> Cihazınızın genel (yaklaşık) konumunu tahmin etmek için kullanılabilir.</li>
+                                <li><strong>Ürün etkileşimi verileri:</strong> Uygulama açılışları, reklam gösterimleri ve reklamlara dokunmalar gibi.</li>
+                                <li><strong>Tanılama bilgileri:</strong> Reklam SDK’sıyla ilgili çökme kayıtları ve performans verileri gibi.</li>
+                                <li><strong>Teknik bilgiler:</strong> Bir reklamın sunulması için gereken cihaz türü, işletim sistemi sürümü ve uygulama sürümü gibi.</li>
+                            </ul>
+                        
+                            <p>Google bu bilgileri reklamları sunmak, reklam performansını ölçmek, dolandırıcılığı ve kötüye kullanımı önlemek ve sorunları tespit etmek için kullanır. Cihaz ayarlarınıza ve bölgenize bağlı olarak reklamlar ilgi alanlarınıza göre kişiselleştirilebilir.</p>
+                            <p>Geliştirici olarak bu bilgileri sizi tanımlayacak bir biçimde almayız; AdMob bize yalnızca toplu raporlar (örneğin reklam gösterim sayısı ve tahmini kazanç) sunar. <strong>Zamanlayıcı ayarlarınız, oturum geçmişiniz, notlarınız, etiketleriniz ve geri sayımlarınız Google veya başka herhangi bir üçüncü tarafla paylaşılmaz.</strong> Verilerinizi satmayız. Pomora başka bir analiz veya izleme (tracking) SDK’sı içermez.</p>
+                        
+                            <p>Google’ın verileri nasıl topladığı ve kullandığı hakkında daha fazla bilgi için:</p>
+                            <ul>
+                                <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google Gizlilik Politikası</a></li>
+                                <li><a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener noreferrer">Google’ın, hizmetlerini kullanan site veya uygulamalardan gelen bilgileri nasıl kullandığı</a></li>
+                                <li><a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener noreferrer">Google’ın reklamcılık için verileri nasıl kullandığı</a></li>
+                            </ul>
+                        
+                            <p><strong>Gizlilik Tercihleriniz</strong></p>
+                            <ul>
+                                <li><strong>Android:</strong> Cihaz ayarlarınızdan Reklam Kimliğinizi sıfırlayabilir veya silebilir ya da kişiselleştirilmiş reklamları devre dışı bırakabilirsiniz (cihazınıza bağlı olarak örneğin Ayarlar &gt; Google &gt; Reklamlar veya Ayarlar &gt; Gizlilik &gt; Reklamlar).</li>
+                                <li><strong>iOS:</strong> Hangi uygulamaların sizi izlemek (tracking) için izin isteyebileceğini Ayarlar &gt; Gizlilik ve Güvenlik &gt; İzleme bölümünden yönetebilirsiniz.</li>
+                                <li><strong>Google reklam ayarları:</strong> Google Hesabınız için reklam kişiselleştirmesini <a href="https://myadcenter.google.com/" target="_blank" rel="noopener noreferrer">Reklam Merkezim (My Ad Center)</a> üzerinden yönetebilirsiniz.</li>
+                                <li><strong>Tüm veri toplamayı durdurma:</strong> Uygulamayı kaldırmak, uygulama ve reklam SDK’sı tarafından yapılan tüm veri toplamayı durdurur.</li>
+                            </ul>
+                            <p>Pomora şu anda uygulama içinde kendi onay (consent) veya izleme izni penceresini göstermemektedir. İleride bu tür seçenekler eklersek bu Gizlilik Politikası’nı buna göre güncelleyeceğiz.</p>
+                        </div>
+                    </section>
+
+                    <!-- SECTION 7: CHILDREN'S PRIVACY -->
+                    <section id="tr-childrens-privacy" class="section">
+                        <div class="section-header">
+                            <span class="section-number">07</span>
+                            <h2 class="section-title">Çocukların Gizliliği</h2>
+                        </div>
+                        <div class="section-content">
+                            <p>Pomora: Focus Timer, herkesin odaklanmasını ve zaman yönetimini geliştirmesine yardımcı olmak için tasarlanmış, genel kitleye yönelik bir verimlilik uygulamasıdır.</p>
+                            <p>Uygulama, 13 yaşın (bazı ülkelerde 16 yaşın) altındaki çocuklara yönelik değildir. Uygulama Google AdMob tarafından sağlanan reklamlar gösterdiğinden küçük çocukların kullanımına yönelik değildir. Uygulama aracılığıyla kişisel bilgi toplamayız ve <strong>çocuklardan bilerek kişisel veri toplamayız</strong>.</p>
+                            <p>Ebeveyn veya vasiyseniz ve çocuğunuzun bize kişisel bilgi verdiğini düşünüyorsanız, talebinizle hemen ilgilenebilmemiz için lütfen aşağıdaki e-posta adresinden bizimle iletişime geçin.</p>
+                        </div>
+                    </section>
+
+                    <!-- SECTION 8: SECURITY -->
+                    <section id="tr-security" class="section">
+                        <div class="section-header">
+                            <span class="section-number">08</span>
+                            <h2 class="section-title">Veri Güvenliği</h2>
+                        </div>
+                        <div class="section-content">
+                            <p>Gizliliğinizin güvenliği, uygulama mimarimizin tasarımına dahil edilmiştir:</p>
+                            <ul>
+                                <li>Odak verileriniz cihazınızda yerel olarak saklanır ve uzak bulut sunucuları işletmeyiz; bu nedenle verilerinizi tutan bir Pomora veritabanı yoktur.</li>
+                                <li>Google AdMob tarafından işlenen veriler, Google’ın kendi güvenlik uygulamaları ve Gizlilik Politikası kapsamında ele alınır.</li>
+                                <li>Yerel uygulama verileriniz, mobil cihazınızın işletim sistemine yerleşik güvenlik korumalı alanı (sandbox) ile korunur.</li>
+                            </ul>
+                            <p>Cihazınızın sürekli güvenliği için akıllı telefonunuzun işletim sistemini güncel tutmanızı öneririz.</p>
+                        </div>
+                    </section>
+
+                    <!-- SECTION 9: CHANGES TO PRIVACY POLICY -->
+                    <section id="tr-policy-changes" class="section">
+                        <div class="section-header">
+                            <span class="section-number">09</span>
+                            <h2 class="section-title">Gizlilik Politikasındaki Değişiklikler</h2>
+                        </div>
+                        <div class="section-content">
+                            <p>Gizlilik Politikamızı, gelecekteki uygulama güncellemelerini yansıtmak veya değişen yasal gereklilikler ile Google Play ve Apple App Store politikalarına uyum sağlamak amacıyla zaman zaman güncelleyebiliriz.</p>
+                            <p>Tüm güncellemeler, belgenin üst kısmındaki <strong>“Yürürlük Tarihi”</strong> güncellenerek doğrudan bu sayfada yayınlanır. Gizliliğinizi nasıl koruduğumuz hakkında bilgi sahibi olmak için bu Gizlilik Politikası’nı düzenli aralıklarla incelemenizi öneririz.</p>
+                        </div>
+                    </section>
+
+                    <!-- SECTION 10: CONTACT -->
+                    <section id="tr-contact" class="section">
+                        <div class="section-header">
+                            <span class="section-number">10</span>
+                            <h2 class="section-title">İletişim</h2>
+                        </div>
+                        <div class="section-content">
+                            <p>Bu Gizlilik Politikası veya <strong>Pomora: Focus Timer</strong>’ın gizlilik uygulamalarıyla ilgili soru, öneri veya endişeleriniz için bize e-posta yoluyla ulaşabilirsiniz:</p>
+                        
+                            <div class="contact-card">
+                                <div class="contact-detail-label">Resmi Destek E-postası</div>
+                                <div class="contact-item">
+                                    <div class="contact-icon">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                                    </div>
+                                    <div>
+                                        <a href="mailto:aysenurkaya.dev@gmail.com" class="contact-email-link">aysenurkaya.dev@gmail.com</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                </article>
+            </div>
+    </div>
+        <div data-lang="en" lang="en">
+            <!-- HERO SECTION -->
+            <section class="hero">
+                <div class="hero-badge">
+                    <span class="hero-badge-dot"></span>
+                    <span>OFFICIAL PRIVACY DOCUMENT</span>
+                </div>
+                <h1 class="hero-title">Privacy Policy</h1>
+                <p class="hero-subtitle">
+                    Pomora: Focus Timer is built with a <strong>privacy-first approach</strong>.
+                    Your focus data stays on your device. The app shows ads provided by Google AdMob.
+                </p>
+                <div class="hero-meta">
+                    <div class="hero-meta-item">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                        <span><strong>Effective Date:</strong> October 7, 2026</span>
+                    </div>
+                    <div class="hero-meta-item">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                        <span>Applies to Android &amp; iOS</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- HIGHLIGHTS CARDS -->
+            <div class="highlights">
+                <div class="highlight-card">
+                    <div class="highlight-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle><line x1="18" y1="8" x2="23" y2="13"></line><line x1="23" y1="8" x2="18" y2="13"></line></svg>
+                    </div>
+                    <h3 class="highlight-title">No Registration</h3>
+                    <p class="highlight-desc">No accounts, emails, passwords, or personal sign-ins required.</p>
+                </div>
+
+                <div class="highlight-card">
+                    <div class="highlight-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg>
+                    </div>
+                    <h3 class="highlight-title">100% Local Storage</h3>
+                    <p class="highlight-desc">Your settings, sessions, notes, and countdowns are stored only on your device.</p>
+                </div>
+
+                <div class="highlight-card">
+                    <div class="highlight-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line></svg>
+                    </div>
+                    <h3 class="highlight-title">Ads by Google AdMob</h3>
+                    <p class="highlight-desc">Ads are served by Google AdMob, which processes some device data. See Section 6.</p>
+                </div>
+
+                <div class="highlight-card">
+                    <div class="highlight-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path><line x1="1" y1="1" x2="23" y2="23"></line></svg>
+                    </div>
+                    <h3 class="highlight-title">No Pomora Servers</h3>
+                    <p class="highlight-desc">We run no backend; your focus data is never uploaded by us.</p>
+                </div>
+            </div>
+
+            <!-- POLICY CONTENT SECTION -->
+            <div class="policy-wrapper">
+                <!-- SIDEBAR TABLE OF CONTENTS -->
+                <aside class="toc-sidebar">
+                    <div class="toc-title">Table of Contents</div>
+                    <ul class="toc-list">
+                        <li><a href="#header-info" class="toc-link">1. Application Overview</a></li>
+                        <li><a href="#introduction" class="toc-link">2. Introduction</a></li>
+                        <li><a href="#information-collected" class="toc-link">3. Information We Collect</a></li>
+                        <li><a href="#how-we-use" class="toc-link">4. How We Use Information</a></li>
+                        <li><a href="#data-storage" class="toc-link">5. Data Storage & Transfer</a></li>
+                        <li><a href="#third-party" class="toc-link">6. Advertising &amp; Third Parties</a></li>
+                        <li><a href="#childrens-privacy" class="toc-link">7. Children's Privacy</a></li>
+                        <li><a href="#security" class="toc-link">8. Security</a></li>
+                        <li><a href="#policy-changes" class="toc-link">9. Policy Changes</a></li>
+                        <li><a href="#contact" class="toc-link">10. Contact Us</a></li>
+                    </ul>
+                </aside>
+
+                <!-- DOCUMENT BODY -->
+                <article class="policy-document">
+
+                    <!-- SECTION 1: HEADER INFO -->
+                    <section id="header-info" class="section">
+                        <div class="section-header">
+                            <span class="section-number">01</span>
+                            <h2 class="section-title">Application Overview</h2>
+                        </div>
+                        <div class="section-content">
+                            <p>This Privacy Policy applies to the mobile application <strong>Pomora: Focus Timer</strong> ("the Application", "the App", "we", "us", or "our").</p>
+                            <ul>
+                                <li><strong>Application Name:</strong> Pomora: Focus Timer</li>
+                                <li><strong>Application Category:</strong> Productivity / Focus Timer / Pomodoro Technique</li>
+                                <li><strong>Primary Purpose:</strong> Helping users manage work/study intervals, boost concentration through the Pomodoro technique, and maximize daily productivity.</li>
+                                <li><strong>Platforms:</strong> Android (Google Play) and iOS (App Store)</li>
+                                <li><strong>Last Updated:</strong> October 7, 2026</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <!-- SECTION 2: INTRODUCTION -->
+                    <section id="introduction" class="section">
+                        <div class="section-header">
+                            <span class="section-number">02</span>
+                            <h2 class="section-title">Introduction</h2>
+                        </div>
+                        <div class="section-content">
+                            <p>We respect your fundamental right to privacy. We created <strong>Pomora: Focus Timer</strong> with a core philosophy: a productivity application should help you focus without intruding into your personal life or monitoring your digital habits.</p>
+                            <p>This Privacy Policy explains what data is stored by the app, what data is processed by the third-party advertising service integrated into the app (Google AdMob), and the choices available to you.</p>
+                        
+                            <div class="callout-box">
+                                <div class="callout-icon">
+                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                                </div>
+                                <div class="callout-text">
+                                    <strong>In short:</strong> Pomora has no accounts and we do not collect your name, email, or other personal details. Your focus data is stored only on your device. The app displays ads provided by Google AdMob, and Google may process certain device information as described in Section 6.
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- SECTION 3: INFORMATION WE COLLECT -->
+                    <section id="information-collected" class="section">
+                        <div class="section-header">
+                            <span class="section-number">03</span>
+                            <h2 class="section-title">Information We Collect</h2>
+                        </div>
+                        <div class="section-content">
+                            <p>Pomora does not require an account, and <strong>we, the developer, do not collect personal data</strong> such as your name, email address, or phone number. Information related to the app falls into the following categories:</p>
+                        
+                            <ul>
+                                <li><strong>Data stored only on your device:</strong> Timer durations and preferences (sound, vibration, auto-start), your focus session history (start and end times, focused time, completed rounds), session notes, daily notes, subject tags, and exam or custom countdowns. This data is created by you, stays on your device, and is not accessible to us.</li>
+                                <li><strong>No User Account System:</strong> The application operates without user registration, social login, or password creation. You can use all features immediately upon installation without providing any credentials.</li>
+                                <li><strong>Data processed by Google AdMob:</strong> The advertising SDK integrated into the app collects certain device information (such as device and advertising identifiers, IP address, ad interactions, and diagnostic data) directly from your device to show and measure ads. This is described in detail in Section 6.</li>
+                                <li><strong>Device permissions:</strong> The app asks for permission to send notifications, which are used only for local alerts when a focus session or break ends. Pomora does not request access to your camera, microphone, contacts, photos, or precise location.</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <!-- SECTION 4: HOW WE USE INFORMATION -->
+                    <section id="how-we-use" class="section">
+                        <div class="section-header">
+                            <span class="section-number">04</span>
+                            <h2 class="section-title">How We Use Information</h2>
+                        </div>
+                        <div class="section-content">
+                            <p>The data stored locally on your device is used only to provide the app's features. We do not use it for marketing or analytics, and it is not shared with advertisers. It is used for:</p>
+                        
+                            <ul>
+                                <li><strong>Providing Core Application Features:</strong> Remembering your custom focus intervals, short breaks, long break durations, and preferred alert sounds.</li>
+                                <li><strong>Local Notifications & Reminders:</strong> Operating local device notifications to alert you when a focus session finishes or when a break starts. Local notifications execute entirely on your operating system without external servers.</li>
+                                <li><strong>Session Statistics:</strong> Displaying your personal focus progress locally on your screen during active usage.</li>
+                                <li><strong>Notes, Tags &amp; Countdowns:</strong> Showing the notes, subject tags, and exam or custom countdowns you create.</li>
+                                <li><strong>Advertising:</strong> Ads are displayed to support free use of the app. Data used for advertising is collected and processed by Google AdMob, not by us (see Section 6).</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <!-- SECTION 5: DATA STORAGE & TRANSFER -->
+                    <section id="data-storage" class="section">
+                        <div class="section-header">
+                            <span class="section-number">05</span>
+                            <h2 class="section-title">Data Storage & Transfer</h2>
+                        </div>
+                        <div class="section-content">
+                            <p><strong>100% On-Device Local Storage:</strong> All data generated while using Pomora (such as timer configurations and session tallies) is stored exclusively within the app's local storage on your device (an on-device database and app preferences storage).</p>
+                            <p><strong>No Pomora Servers:</strong> We do not host remote servers or cloud databases for Pomora. Your focus data, notes, tags, and countdowns are not transmitted over the Internet or backed up to external servers by us. Your device's operating system may include app data in device backups (for example, iCloud or Google backups) according to your own device settings.</p>
+                            <p><strong>Advertising Network Requests:</strong> The only network communication performed by the app is made by the Google Mobile Ads SDK to request, display, and measure ads. Data sent to Google in this process is described in Section 6.</p>
+                            <p><strong>Data Deletion:</strong> Since your focus data resides locally on your device, uninstalling the Pomora application removes the app's local data from your device. Data already processed by Google for advertising is governed by Google's Privacy Policy; you can manage it using the options in Section 6.</p>
+                        </div>
+                    </section>
+
+                    <!-- SECTION 6: THIRD PARTY SERVICES -->
+                    <section id="third-party" class="section">
+                        <div class="section-header">
+                            <span class="section-number">06</span>
+                            <h2 class="section-title">Advertising &amp; Third-Party Services</h2>
+                        </div>
+                        <div class="section-content">
+                            <p>Pomora displays full-screen (interstitial) ads using <strong>Google AdMob</strong> (the Google Mobile Ads SDK), a service provided by Google LLC. An ad may be shown when you leave the summary screen after completing a focus session, or after you confirm that you want to end a session early. Google AdMob is the only third-party service integrated into the app.</p>
+                            <p>When ads are requested and shown, the Google Mobile Ads SDK collects certain information directly from your device and sends it to Google. According to Google's documentation, this may include:</p>
+                        
+                            <ul>
+                                <li><strong>Device and advertising identifiers:</strong> On Android, the Advertising ID and app set ID. On iOS, the identifier for vendors (IDFV). On iOS, the advertising identifier (IDFA) is only available to an app if you grant permission through Apple's App Tracking Transparency prompt; Pomora does not currently show this prompt.</li>
+                                <li><strong>IP address:</strong> Which may be used to estimate the general (approximate) location of your device.</li>
+                                <li><strong>Product interaction data:</strong> Such as app launches, ad impressions, and taps on ads.</li>
+                                <li><strong>Diagnostic information:</strong> Such as crash logs and performance data related to the ad SDK.</li>
+                                <li><strong>Technical information:</strong> Such as device type, operating system version, and app version, needed to deliver an ad.</li>
+                            </ul>
+                        
+                            <p>Google uses this information to deliver ads, to measure ad performance, to prevent fraud and abuse, and to diagnose problems. Depending on your device settings and region, ads may be personalized based on your interests.</p>
+                            <p>As the developer, we do not receive this information in a form that identifies you; AdMob provides us with aggregated reports (for example, the number of ad impressions and estimated earnings). <strong>Your timer settings, session history, notes, tags, and countdowns are not shared with Google or any other third party.</strong> We do not sell your data. Pomora does not include any other analytics or tracking SDKs.</p>
+                        
+                            <p>For more information about how Google collects and uses data, please see:</p>
+                            <ul>
+                                <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google Privacy Policy</a></li>
+                                <li><a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener noreferrer">How Google uses information from sites or apps that use its services</a></li>
+                                <li><a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener noreferrer">How Google uses data for advertising</a></li>
+                            </ul>
+                        
+                            <p><strong>Your Privacy Choices</strong></p>
+                            <ul>
+                                <li><strong>Android:</strong> You can reset or delete your Advertising ID, or opt out of ads personalization, in your device settings (for example, Settings &gt; Google &gt; Ads, or Settings &gt; Privacy &gt; Ads, depending on your device).</li>
+                                <li><strong>iOS:</strong> You can manage which apps may request to track you under Settings &gt; Privacy &amp; Security &gt; Tracking.</li>
+                                <li><strong>Google ad settings:</strong> You can manage ad personalization for your Google Account at <a href="https://myadcenter.google.com/" target="_blank" rel="noopener noreferrer">My Ad Center</a>.</li>
+                                <li><strong>Stop all collection:</strong> Uninstalling the app stops all data collection by the app and the advertising SDK.</li>
+                            </ul>
+                            <p>Pomora does not currently display its own in-app consent or tracking permission dialog. If we add such options in the future, we will update this Privacy Policy accordingly.</p>
+                        </div>
+                    </section>
+
+                    <!-- SECTION 7: CHILDREN'S PRIVACY -->
+                    <section id="childrens-privacy" class="section">
+                        <div class="section-header">
+                            <span class="section-number">07</span>
+                            <h2 class="section-title">Children's Privacy</h2>
+                        </div>
+                        <div class="section-content">
+                            <p>Pomora: Focus Timer is a general audience productivity utility designed to help anyone improve concentration and time management.</p>
+                            <p>The Application is not directed to children under the age of 13 (or under 16 in certain jurisdictions). Because the app displays ads provided by Google AdMob, it is not intended for use by young children. We do not collect personal information through the app, and <strong>we do not knowingly collect personal data from children</strong>.</p>
+                            <p>If you are a parent or guardian and believe your child has provided us with personal information, please contact us at the email address below so we can address your inquiry immediately.</p>
+                        </div>
+                    </section>
+
+                    <!-- SECTION 8: SECURITY -->
+                    <section id="security" class="section">
+                        <div class="section-header">
+                            <span class="section-number">08</span>
+                            <h2 class="section-title">Data Security</h2>
+                        </div>
+                        <div class="section-content">
+                            <p>The security of your privacy is built into our application architecture by design:</p>
+                            <ul>
+                                <li>Your focus data is stored locally on your device and we do not operate remote cloud servers, so there is no Pomora database that holds your data.</li>
+                                <li>Data processed by Google AdMob is handled under Google's own security practices and Privacy Policy.</li>
+                                <li>Your local app data is protected by your mobile device's built-in operating system security sandbox.</li>
+                            </ul>
+                            <p>We recommend keeping your smartphone operating system updated to ensure the continuous security of your device environment.</p>
+                        </div>
+                    </section>
+
+                    <!-- SECTION 9: CHANGES TO PRIVACY POLICY -->
+                    <section id="policy-changes" class="section">
+                        <div class="section-header">
+                            <span class="section-number">09</span>
+                            <h2 class="section-title">Changes to Privacy Policy</h2>
+                        </div>
+                        <div class="section-content">
+                            <p>We may update our Privacy Policy from time to time to reflect future application updates or compliance with evolving legal requirements and Google Play and Apple App Store policies.</p>
+                            <p>Any updates will be published directly on this page with an updated <strong>"Effective Date"</strong> at the top of the document. We encourage you to review this Privacy Policy periodically to stay informed about how we maintain your privacy.</p>
+                        </div>
+                    </section>
+
+                    <!-- SECTION 10: CONTACT -->
+                    <section id="contact" class="section">
+                        <div class="section-header">
+                            <span class="section-number">10</span>
+                            <h2 class="section-title">Contact Us</h2>
+                        </div>
+                        <div class="section-content">
+                            <p>If you have any questions, suggestions, or concerns regarding this Privacy Policy or the privacy practices of <strong>Pomora: Focus Timer</strong>, please feel free to reach out to us via email:</p>
+                        
+                            <div class="contact-card">
+                                <div class="contact-detail-label">Official Support Email</div>
+                                <div class="contact-item">
+                                    <div class="contact-icon">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                                    </div>
+                                    <div>
+                                        <a href="mailto:aysenurkaya.dev@gmail.com" class="contact-email-link">aysenurkaya.dev@gmail.com</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                </article>
+            </div>
+    </div>
     </main>
 
     <!-- FOOTER -->
     <footer class="footer">
         <div class="container footer-content">
-            <div class="footer-brand">
-                <span>Pomora: Focus Timer</span>
-            </div>
-            <ul class="footer-links">
-                <li><a href="#header-info">Overview</a></li>
-                <li><a href="#information-collected">Data Collection</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">Back to Top ↑</a></li>
-            </ul>
-            <div class="footer-compliance">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-                <span>Google Play Developer Policy Compliant Privacy Document</span>
-            </div>
-            <p>&copy; 2026 Pomora. All rights reserved.</p>
+            <div data-lang="tr" lang="tr">
+                <div class="footer-brand">
+                    <span>Pomora: Focus Timer</span>
+                </div>
+                <ul class="footer-links">
+                    <li><a href="#tr-header-info">Genel Bakış</a></li>
+                    <li><a href="#tr-information-collected">Veri Toplama</a></li>
+                    <li><a href="#tr-contact">İletişim</a></li>
+                    <li><a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">Başa Dön ↑</a></li>
+                </ul>
+                <div class="footer-compliance">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                    <span>Google Play ve App Store’daki Pomora için Gizlilik Politikası</span>
+                </div>
+                <p>&copy; 2026 Pomora. Tüm hakları saklıdır.</p>
+    </div>
+            <div data-lang="en" lang="en">
+                <div class="footer-brand">
+                    <span>Pomora: Focus Timer</span>
+                </div>
+                <ul class="footer-links">
+                    <li><a href="#header-info">Overview</a></li>
+                    <li><a href="#information-collected">Data Collection</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">Back to Top ↑</a></li>
+                </ul>
+                <div class="footer-compliance">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                    <span>Privacy Policy for Pomora on Google Play and the App Store</span>
+                </div>
+                <p>&copy; 2026 Pomora. All rights reserved.</p>
+    </div>
         </div>
     </footer>
 
@@ -973,6 +1390,8 @@
                 let scrollY = window.pageYOffset;
 
                 sections.forEach(current => {
+                    // Gizli dildeki bölümler atlanır.
+                    if (!current.offsetParent) return;
                     const sectionHeight = current.offsetHeight;
                     const sectionTop = current.offsetTop - 140;
                     const sectionId = current.getAttribute('id');
@@ -989,6 +1408,40 @@
             }
 
             window.addEventListener('scroll', highlightNav);
+
+            // Dil seçici
+            const LABELS = {
+                tr: { title: 'Gizlilik Politikası - Pomora: Focus Timer', print: 'Yazdır veya PDF olarak kaydet' },
+                en: { title: 'Privacy Policy - Pomora: Focus Timer', print: 'Print or Save as PDF' },
+            };
+            const langButtons = document.querySelectorAll('[data-set-lang]');
+            const printButton = document.querySelector('.btn-print');
+
+            function applyLang(lang) {
+                document.documentElement.lang = lang;
+                document.title = LABELS[lang].title;
+                if (printButton) {
+                    printButton.title = LABELS[lang].print;
+                    printButton.setAttribute('aria-label', LABELS[lang].print);
+                }
+                langButtons.forEach(btn => {
+                    btn.setAttribute('aria-pressed', String(btn.dataset.setLang === lang));
+                });
+                navLinks.forEach(link => link.classList.remove('active'));
+            }
+
+            langButtons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const lang = btn.dataset.setLang;
+                    if (lang === document.documentElement.lang) return;
+                    applyLang(lang);
+                    try {
+                        localStorage.setItem('pomora-privacy-lang', lang);
+                    } catch (e) { /* tercih kaydedilemedi; sayfa yine çalışır */ }
+                });
+            });
+
+            applyLang(document.documentElement.lang === 'en' ? 'en' : 'tr');
         });
     </script>
 </body>
