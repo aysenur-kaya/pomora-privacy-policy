@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destek - Pomora: Focus Timer &amp; Study</title>
+    <script>
+        // Dil, ilk çizimden önce belirlenir; gizlilik politikası sayfasıyla aynı anahtarı paylaşır.
+        (function () {
+            var lang = 'tr';
+            try {
+                var saved = localStorage.getItem('pomora-privacy-lang');
+                if (saved === 'tr' || saved === 'en') lang = saved;
+            } catch (e) { /* localStorage kullanılamıyor: varsayılan dil */ }
+            document.documentElement.lang = lang;
+            if (lang === 'en') document.title = 'Support - Pomora: Focus Timer & Study';
+        })();
+    </script>
+    <meta name="description" content="Pomora: Focus Timer &amp; Study support: contact, frequently asked questions and privacy policy. / Pomora destek sayfası: iletişim, sık sorulan sorular ve gizlilik politikası.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://aysenur-kaya.github.io/pomora-privacy-policy/support/">
+
+    <meta property="og:title" content="Support - Pomora: Focus Timer &amp; Study">
+    <meta property="og:description" content="Contact, FAQ and privacy policy for Pomora. / İletişim, sık sorulan sorular ve gizlilik politikası.">
+    <meta property="og:type" content="website">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-cream: #F5F3EF;
+            --bg-surface: #FFFFFF;
+            --text-ink: #28261F;
+            --text-muted: #625F56;
+            --text-light: #8E8A7E;
+            --brand-terracotta: #B3654A;
+            --brand-terracotta-hover: #9E553C;
+            --brand-terracotta-light: rgba(179, 101, 74, 0.08);
+            --brand-terracotta-border: rgba(179, 101, 74, 0.2);
+            --border-subtle: rgba(40, 38, 31, 0.08);
+            --border-medium: rgba(40, 38, 31, 0.14);
+            --shadow-sm: 0 2px 8px rgba(40, 38, 31, 0.03);
+            --shadow-md: 0 12px 32px -8px rgba(40, 38, 31, 0.06);
+            --radius-md: 14px;
+            --radius-lg: 20px;
+            --radius-pill: 9999px;
+            --transition-fast: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+            --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', Roboto, sans-serif;
+        }
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        html {
+            background-color: var(--bg-cream);
+            color: var(--text-ink);
+            font-family: var(--font-main);
+            -webkit-font-smoothing: antialiased;
+            font-size: 16px;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        body { min-height: 100vh; display: flex; flex-direction: column; background-color: var(--bg-cream); }
+
+        :focus-visible { outline: 2px solid var(--brand-terracotta); outline-offset: 3px; }
+
+        a { color: var(--brand-terracotta); }
+        a:hover { color: var(--brand-terracotta-hover); }
+
+        .container { width: 100%; max-width: 860px; margin: 0 auto; padding: 0 24px; }
+
+        /* Header */
+        .header {
+            position: sticky; top: 0; z-index: 100;
+            background-color: rgba(245, 243, 239, 0.85);
+            backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border-subtle);
+            padding: 16px 0;
+        }
+        .header-content { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+        .brand-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--text-ink); }
+        .logo-icon {
+            width: 38px; height: 38px; background-color: var(--brand-terracotta); border-radius: 10px;
+            display: flex; align-items: center; justify-content: center; color: #fff;
+            box-shadow: 0 4px 12px rgba(179, 101, 74, 0.25); flex-shrink: 0;
+        }
+        .brand-name { font-size: 1.125rem; font-weight: 700; letter-spacing: -0.02em; }
+        .brand-badge {
+            font-size: 0.75rem; font-weight: 600; color: var(--brand-terracotta);
+            background: var(--brand-terracotta-light); border: 1px solid var(--brand-terracotta-border);
+            padding: 2px 10px; border-radius: var(--radius-pill);
+        }
+
+        .lang-switch {
+            display: inline-flex; align-items: center; gap: 2px; padding: 3px;
+            background-color: var(--bg-surface); border: 1px solid var(--border-medium);
+            border-radius: var(--radius-pill); box-shadow: var(--shadow-sm);
+        }
+        .lang-btn {
+            font-family: var(--font-main); font-size: 0.8125rem; font-weight: 600; color: var(--text-muted);
+            background: transparent; border: none; border-radius: var(--radius-pill);
+            padding: 6px 12px; min-height: 32px; cursor: pointer; transition: all var(--transition-fast);
+        }
+        .lang-btn:hover { color: var(--brand-terracotta); }
+        .lang-btn[aria-pressed="true"] { background-color: var(--brand-terracotta); color: #fff; }
+        .lang-sep { color: var(--text-light); font-size: 0.8125rem; }
+
+        html[lang="tr"] [data-lang="en"],
+        html[lang="en"] [data-lang="tr"] { display: none !important; }
+
+        /* Hero */
+        main { flex: 1; }
+        .hero { padding: 64px 0 40px; text-align: center; }
+        .hero-badge {
+            display: inline-flex; align-items: center; gap: 8px;
+            font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em; color: var(--brand-terracotta);
+            background: var(--brand-terracotta-light); border: 1px solid var(--brand-terracotta-border);
+            padding: 6px 14px; border-radius: var(--radius-pill); margin-bottom: 20px;
+        }
+        .hero-badge-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--brand-terracotta); }
+        .hero-title { font-size: clamp(2rem, 6vw, 2.75rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1.15; margin-bottom: 14px; }
+        .hero-subtitle { max-width: 560px; margin: 0 auto; color: var(--text-muted); font-size: 1.0625rem; }
+
+        /* Cards */
+        .card {
+            background: var(--bg-surface); border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-lg); box-shadow: var(--shadow-md); padding: 32px;
+        }
+        .contact-card { display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+        .contact-card h2 { font-size: 1.25rem; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 6px; }
+        .contact-card p { color: var(--text-muted); font-size: 0.9375rem; max-width: 460px; }
+        .contact-mail { margin-top: 10px; font-weight: 600; overflow-wrap: anywhere; }
+
+        .btn {
+            display: inline-flex; align-items: center; gap: 10px; text-decoration: none;
+            background: var(--brand-terracotta); color: #fff; font-weight: 600; font-size: 0.9375rem;
+            padding: 14px 22px; border-radius: var(--radius-pill); min-height: 48px;
+            box-shadow: 0 6px 16px rgba(179, 101, 74, 0.28); transition: all var(--transition-fast);
+        }
+        .btn:hover { background: var(--brand-terracotta-hover); color: #fff; transform: translateY(-1px); }
+
+        .section { margin-top: 48px; }
+        .section-title { font-size: 1.5rem; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 6px; }
+        .section-lead { color: var(--text-muted); margin-bottom: 20px; font-size: 0.9375rem; }
+
+        /* FAQ */
+        .faq { display: flex; flex-direction: column; gap: 10px; }
+        .faq details {
+            background: var(--bg-surface); border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-md); box-shadow: var(--shadow-sm); transition: border-color var(--transition-fast);
+        }
+        .faq details[open] { border-color: var(--brand-terracotta-border); }
+        .faq summary {
+            list-style: none; cursor: pointer; padding: 18px 20px; font-weight: 600; font-size: 1rem;
+            display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 56px;
+        }
+        .faq summary::-webkit-details-marker { display: none; }
+        .faq summary::after {
+            content: ""; flex-shrink: 0; width: 8px; height: 8px;
+            border-right: 2px solid var(--brand-terracotta); border-bottom: 2px solid var(--brand-terracotta);
+            transform: rotate(45deg); transition: transform var(--transition-fast); margin-right: 4px;
+        }
+        .faq details[open] summary::after { transform: rotate(-135deg); }
+        .faq .answer { padding: 0 20px 20px; color: var(--text-muted); font-size: 0.9375rem; }
+        .faq .answer p + p, .faq .answer ul { margin-top: 10px; }
+        .faq .answer ul { padding-left: 20px; }
+        .faq .answer li + li { margin-top: 4px; }
+
+        .privacy-card { display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; padding: 24px 28px; }
+        .privacy-card h2 { font-size: 1.125rem; font-weight: 700; margin-bottom: 4px; }
+        .privacy-card p { color: var(--text-muted); font-size: 0.9375rem; }
+        .btn-outline {
+            display: inline-flex; align-items: center; gap: 8px; text-decoration: none; font-weight: 600; font-size: 0.9375rem;
+            color: var(--brand-terracotta); border: 1px solid var(--brand-terracotta-border); background: var(--brand-terracotta-light);
+            padding: 12px 20px; border-radius: var(--radius-pill); min-height: 48px; transition: all var(--transition-fast);
+        }
+        .btn-outline:hover { background: var(--brand-terracotta); color: #fff; }
+
+        /* Footer */
+        .footer { margin-top: 64px; border-top: 1px solid var(--border-subtle); padding: 32px 0; text-align: center; color: var(--text-light); font-size: 0.8125rem; }
+        .footer-links { list-style: none; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 12px; }
+        .footer-links a { font-weight: 600; font-size: 0.875rem; text-decoration: none; }
+        .footer-links a:hover { text-decoration: underline; }
+
+        @media (max-width: 640px) {
+            .container { padding: 0 16px; }
+            .brand-badge { display: none; }
+            .hero { padding: 40px 0 28px; }
+            .card { padding: 24px 20px; }
+            .contact-card { flex-direction: column; align-items: flex-start; }
+            .contact-card .btn, .privacy-card .btn-outline { width: 100%; justify-content: center; }
+            .lang-btn { padding: 6px 10px; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            * { transition: none !important; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="container header-content">
+            <a href="../" class="brand-logo" aria-label="Pomora">
+                <div class="logo-icon">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <circle cx="12" cy="13" r="8"></circle>
+                        <path d="M12 9v4l2.5 2.5"></path>
+                        <path d="M12 2v3"></path>
+                        <path d="M9 3.5c1.5-1 4.5-1 6 0"></path>
+                    </svg>
+                </div>
+                <span class="brand-name">Pomora</span>
+                <span class="brand-badge">Focus Timer &amp; Study</span>
+            </a>
+            <div class="lang-switch" role="group" aria-label="Dil / Language">
+                <button type="button" class="lang-btn" data-set-lang="tr" lang="tr" aria-pressed="true">Türkçe</button>
+                <span class="lang-sep" aria-hidden="true">|</span>
+                <button type="button" class="lang-btn" data-set-lang="en" lang="en" aria-pressed="false">English</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <!-- ===================== TÜRKÇE ===================== -->
+        <div data-lang="tr" lang="tr">
+            <section class="hero">
+                <div class="hero-badge"><span class="hero-badge-dot"></span><span>DESTEK</span></div>
+                <h1 class="hero-title">Pomora: Focus Timer &amp; Study</h1>
+                <p class="hero-subtitle">Bir sorunuz mu var ya da bir sorun mu yaşıyorsunuz? Aşağıdaki sık sorulan sorulara göz atın veya bize e-posta gönderin.</p>
+            </section>
+
+            <div class="card contact-card">
+                <div>
+                    <h2>Bize ulaşın</h2>
+                    <p>Sorularınız, geri bildirimleriniz ve sorun bildirimleriniz için e-posta gönderebilirsiniz.</p>
+                    <p class="contact-mail"><a href="mailto:pomora.support@gmail.com?subject=Pomora%20Destek">pomora.support@gmail.com</a></p>
+                </div>
+                <a class="btn" href="mailto:pomora.support@gmail.com?subject=Pomora%20Destek">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-10 6L2 7"></path></svg>
+                    E-posta gönder
+                </a>
+            </div>
+
+            <section class="section" id="sss">
+                <h2 class="section-title">Sık Sorulan Sorular</h2>
+                <p class="section-lead">Ekran adları uygulamadaki adlarla aynıdır.</p>
+                <div class="faq">
+                    <details>
+                        <summary>Odak oturumunu nasıl başlatırım?</summary>
+                        <div class="answer">
+                            <p><strong>Bugün</strong> sekmesindeki <strong>Odaklanmaya Başla</strong> düğmesine dokunun. Odak ekranında ders adını girebilir, çalışma süresi, mola süresi ve tur sayısını ayarlayabilirsiniz. Sayaç çalışırken <strong>Duraklat</strong> ve <strong>Oturumu Bitir</strong> düğmelerini kullanabilirsiniz.</p>
+                        </div>
+                    </details>
+                    <details>
+                        <summary>Varsayılan çalışma ve mola sürelerini nasıl değiştiririm?</summary>
+                        <div class="answer">
+                            <p><strong>Ayarlar → Varsayılanlar</strong> bölümünden şunları ayarlayabilirsiniz:</p>
+                            <ul>
+                                <li>Çalışma süresi: 5–90 dk</li>
+                                <li>Mola süresi: 1–30 dk</li>
+                                <li>Uzun mola süresi: 5–60 dk</li>
+                                <li>Uzun mola sıklığı: Kapalı veya 1–8 turda bir</li>
+                                <li>Tur sayısı: 1–8</li>
+                            </ul>
+                        </div>
+                    </details>
+                    <details>
+                        <summary>Mola ve tur sonu bildirimleri gelmiyor, ne yapmalıyım?</summary>
+                        <div class="answer">
+                            <p>Pomora, çalışma ve mola süreleri dolduğunda bildirim gönderir. Bildirim almak için aşağıdakileri kontrol edin:</p>
+                            <ul>
+                                <li>Cihazınızın ayarlarında Pomora için bildirimlere izin verildiğinden emin olun.</li>
+                                <li><strong>Ayarlar → Bildirimler</strong> bölümünde <strong>Bildirim sesi</strong> ve <strong>Titreşim</strong> seçeneklerinin açık olduğunu kontrol edin.</li>
+                                <li>Cihazınızın sessiz modda veya rahatsız etme modunda olmadığından emin olun.</li>
+                            </ul>
+                            <p>Sorun sürerse cihaz modelinizi ve işletim sistemi sürümünüzü belirterek bize yazın.</p>
+                        </div>
+                    </details>
+                    <details>
+                        <summary>Bildirim sesini nasıl değiştiririm?</summary>
+                        <div class="answer">
+                            <p><strong>Ayarlar → Bildirimler → Mola bildirim sesi</strong> bölümünden listeden bir ses seçebilirsiniz; seçtiğiniz ses hemen çalınır. Sesi tamamen kapatmak için <strong>Bildirim sesi</strong> anahtarını kapatabilir veya <strong>Sessiz</strong> seçeneğini seçebilirsiniz. Seçilen ses, çalışma ve mola süresi dolduğunda çalar.</p>
+                        </div>
+                    </details>
+                    <details>
+                        <summary>Oturum sırasında ekran açık kalır mı?</summary>
+                        <div class="answer">
+                            <p>Evet. Sayaç çalışırken Odak ekranı açıkken ekran uyku moduna geçmez. Sayaç duraklatıldığında ya da oturum bittiğinde bu engel kaldırılır.</p>
+                        </div>
+                    </details>
+                    <details>
+                        <summary>Mola ve yeni tur otomatik başlayabilir mi?</summary>
+                        <div class="answer">
+                            <p>Evet. <strong>Ayarlar → Oturum Akışı</strong> bölümündeki <strong>Otomatik mola başlat</strong> ve <strong>Otomatik yeni tur başlat</strong> seçeneklerini açabilirsiniz.</p>
+                        </div>
+                    </details>
+                    <details>
+                        <summary>Dersleri nasıl eklerim, düzenlerim veya silerim?</summary>
+                        <div class="answer">
+                            <p><strong>Ayarlar → İçerik → Dersler</strong> bölümünden yeni ders ekleyebilir, ders rengini değiştirebilir veya dersi silebilirsiniz. Bir dersi silmek geçmiş oturumlarınızı etkilemez; eski kayıtlar ders adıyla görünmeye devam eder.</p>
+                        </div>
+                    </details>
+                    <details>
+                        <summary>Geçmiş oturumlarımı ve odak serimi nerede görürüm?</summary>
+                        <div class="answer">
+                            <p>Tamamlanan oturumlar <strong>Geçmiş</strong> sekmesinde listelenir. Bir oturuma dokunarak <strong>Oturum Detayı</strong> ekranında not ekleyebilir veya notu düzenleyebilirsiniz. <strong>Bugün</strong> sekmesinde odak serinizi (ardışık gün sayısı) ve bugün tamamlanan oturum sayısını görürsünüz.</p>
+                        </div>
+                    </details>
+                    <details>
+                        <summary>Sınav geri sayımı nasıl eklenir?</summary>
+                        <div class="answer">
+                            <p><strong>Sınavlar</strong> sekmesinden <strong>Sınav Ekle</strong>'ye dokunun ve hazırlandığınız sınavı seçin. Listede TYT, AYT, YDT, KPSS, ALES, DGS, LGS, MSÜ, YDS ve TUS bulunur; <strong>Özel Geri Sayım Oluştur</strong> ile kendi geri sayımınızı da ekleyebilirsiniz.</p>
+                            <p>Listedeki tarihler varsayılan önerilerdir, resmî takvim değildir. Tarihi kendiniz düzenleyebilirsiniz; lütfen güncel tarihler için sınavı yapan kurumun duyurularını takip edin. Bir geri sayımı düzenlemek veya silmek için üzerine basılı tutun.</p>
+                        </div>
+                    </details>
+                    <details>
+                        <summary>Günlük notu nasıl eklerim?</summary>
+                        <div class="answer">
+                            <p><strong>Sınavlar</strong> sekmesindeki <strong>Bugünkü Not</strong> alanına dokunarak o güne ait bir not yazabilirsiniz. Notu silmek için not alanına basılı tutun.</p>
+                        </div>
+                    </details>
+                    <details>
+                        <summary>Verilerim nerede saklanıyor? Hesap oluşturmam gerekiyor mu?</summary>
+                        <div class="answer">
+                            <p>Pomora'da hesap oluşturma yoktur. Oturumlarınız, dersleriniz, sınavlarınız ve notlarınız cihazınızda yerel olarak saklanır. Ayrıntılar için <a href="https://aysenur-kaya.github.io/pomora-privacy-policy/">Gizlilik Politikası</a>'nı okuyabilirsiniz.</p>
+                        </div>
+                    </details>
+                    <details>
+                        <summary>Uygulamada reklamlar var mı? Reklam tercihlerimi nasıl değiştiririm?</summary>
+                        <div class="answer">
+                            <p>Pomora, Google AdMob tarafından sağlanan reklamlar gösterir. Bulunduğunuz bölgede gerekli görülürse Google'ın onay formu gösterilir ve <strong>Ayarlar</strong> ekranında <strong>Gizlilik</strong> bölümü altında <strong>Gizlilik seçenekleri</strong> görünür; reklam tercihinizi buradan değiştirebilirsiniz. Bu bölüm yalnızca gerekli olduğu bölgelerde görüntülenir.</p>
+                        </div>
+                    </details>
+                    <details>
+                        <summary>Bir hata veya sorun bildirmek istiyorum.</summary>
+                        <div class="answer">
+                            <p>Lütfen <a href="mailto:pomora.support@gmail.com?subject=Pomora%20Sorun%20Bildirimi">pomora.support@gmail.com</a> adresine şunları yazın:</p>
+                            <ul>
+                                <li>Sorunu kısaca anlatan bir açıklama ve hangi adımlarda oluştuğu</li>
+                                <li>Cihaz modeliniz ve işletim sistemi sürümünüz (iOS / Android)</li>
+                                <li>Varsa ekran görüntüsü</li>
+                            </ul>
+                        </div>
+                    </details>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="card privacy-card">
+                    <div>
+                        <h2>Gizlilik Politikası</h2>
+                        <p>Verilerinizin nasıl işlendiğini öğrenin.</p>
+                    </div>
+                    <a class="btn-outline" href="https://aysenur-kaya.github.io/pomora-privacy-policy/">Gizlilik Politikasını Oku →</a>
+                </div>
+            </section>
+        </div>
+
+        <!-- ===================== ENGLISH ===================== -->
+        <div data-lang="en" lang="en">
+            <section class="hero">
+                <div class="hero-badge"><span class="hero-badge-dot"></span><span>SUPPORT</span></div>
+                <h1 class="hero-title">Pomora: Focus Timer &amp; Study</h1>
+                <p class="hero-subtitle">Have a question or running into a problem? Browse the frequently asked questions below or send us an email.</p>
+            </section>
+
+            <div class="card contact-card">
+                <div>
+                    <h2>Contact us</h2>
+                    <p>You can email us with questions, feedback or to report an issue.</p>
+                    <p class="contact-mail"><a href="mailto:pomora.support@gmail.com?subject=Pomora%20Support">pomora.support@gmail.com</a></p>
+                </div>
+                <a class="btn" href="mailto:pomora.support@gmail.com?subject=Pomora%20Support">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-10 6L2 7"></path></svg>
+                    Send email
+                </a>
+            </div>
+
+            <section class="section" id="faq">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <p class="section-lead">The app's interface is currently in Turkish, so screen names below are shown as they appear in the app, with a translation.</p>
+                <div class="faq">
+                    <details>
+                        <summary>How do I start a focus session?</summary>
+                        <div class="answer">
+                            <p>On the <strong>Bugün</strong> (Today) tab, tap <strong>Odaklanmaya Başla</strong> (Start Focusing). On the focus screen you can enter a subject name and adjust the work duration, break duration and number of rounds. While the timer runs you can use <strong>Duraklat</strong> (Pause) and <strong>Oturumu Bitir</strong> (End Session).</p>
+                        </div>
+                    </details>
+                    <details>
+                        <summary>How do I change the default work and break durations?</summary>
+                        <div class="answer">
+                            <p>Go to <strong>Ayarlar → Varsayılanlar</strong> (Settings → Defaults), where you can set:</p>
+                            <ul>
+                                <li>Work duration: 5–90 min</li>
+                                <li>Break duration: 1–30 min</li>
+                                <li>Long break duration: 5–60 min</li>
+                                <li>Long break frequency: off, or every 1–8 rounds</li>
+                                <li>Number of rounds: 1–8</li>
+                            </ul>
+                        </div>
+                    </details>
+                    <details>
+                        <summary>I'm not receiving break or round notifications. What should I do?</summary>
+                        <div class="answer">
+                            <p>Pomora sends a notification when a work or break period ends. To receive them, please check that:</p>
+                            <ul>
+                                <li>Notifications are allowed for Pomora in your device settings.</li>
+                                <li><strong>Bildirim sesi</strong> (Notification sound) and <strong>Titreşim</strong> (Vibration) are turned on under <strong>Ayarlar → Bildirimler</strong> (Settings → Notifications).</li>
+                                <li>Your device is not in silent or Do Not Disturb mode.</li>
+                            </ul>
+                            <p>If the problem continues, email us with your device model and operating system version.</p>
+                        </div>
+                    </details>
+                    <details>
+                        <summary>How do I change the notification sound?</summary>
+                        <div class="answer">
+                            <p>Go to <strong>Ayarlar → Bildirimler → Mola bildirim sesi</strong> (Settings → Notifications → Break notification sound) and pick a sound from the list; it plays right away. To turn sound off, switch off <strong>Bildirim sesi</strong> or choose <strong>Sessiz</strong> (Silent). The selected sound plays when a work or break period ends.</p>
+                        </div>
+                    </details>
+                    <details>
+                        <summary>Does the screen stay on during a session?</summary>
+                        <div class="answer">
+                            <p>Yes. While the timer is running and the focus screen is open, the screen won't go to sleep. This is released when the timer is paused or the session ends.</p>
+                        </div>
+                    </details>
+                    <details>
+                        <summary>Can breaks and new rounds start automatically?</summary>
+                        <div class="answer">
+                            <p>Yes. Under <strong>Ayarlar → Oturum Akışı</strong> (Settings → Session Flow), turn on <strong>Otomatik mola başlat</strong> (Auto-start break) and <strong>Otomatik yeni tur başlat</strong> (Auto-start next round).</p>
+                        </div>
+                    </details>
+                    <details>
+                        <summary>How do I add, edit or delete subjects?</summary>
+                        <div class="answer">
+                            <p>Go to <strong>Ayarlar → İçerik → Dersler</strong> (Settings → Content → Subjects) to add a subject, change its color or delete it. Deleting a subject does not affect past sessions; older records keep showing the subject name.</p>
+                        </div>
+                    </details>
+                    <details>
+                        <summary>Where can I see my past sessions and focus streak?</summary>
+                        <div class="answer">
+                            <p>Completed sessions are listed in the <strong>Geçmiş</strong> (History) tab. Tap a session to open <strong>Oturum Detayı</strong> (Session Details), where you can add or edit a note. On the <strong>Bugün</strong> tab you'll see your focus streak (consecutive days) and how many sessions you completed today.</p>
+                        </div>
+                    </details>
+                    <details>
+                        <summary>How do I add an exam countdown?</summary>
+                        <div class="answer">
+                            <p>In the <strong>Sınavlar</strong> (Exams) tab, tap <strong>Sınav Ekle</strong> (Add Exam) and choose your exam. The list includes TYT, AYT, YDT, KPSS, ALES, DGS, LGS, MSÜ, YDS and TUS; you can also create your own with <strong>Özel Geri Sayım Oluştur</strong> (Create Custom Countdown).</p>
+                            <p>The dates in the list are default suggestions, not the official calendar. You can edit the date yourself; please follow the exam authority's announcements for current dates. Press and hold a countdown to edit or delete it.</p>
+                        </div>
+                    </details>
+                    <details>
+                        <summary>How do I add a daily note?</summary>
+                        <div class="answer">
+                            <p>In the <strong>Sınavlar</strong> tab, tap <strong>Bugünkü Not</strong> (Today's Note) to write a note for the day. To delete it, press and hold the note.</p>
+                        </div>
+                    </details>
+                    <details>
+                        <summary>Where is my data stored? Do I need an account?</summary>
+                        <div class="answer">
+                            <p>Pomora has no account creation. Your sessions, subjects, exams and notes are stored locally on your device. For details, please read the <a href="https://aysenur-kaya.github.io/pomora-privacy-policy/">Privacy Policy</a>.</p>
+                        </div>
+                    </details>
+                    <details>
+                        <summary>Does the app show ads? How do I change my ad preferences?</summary>
+                        <div class="answer">
+                            <p>Pomora shows ads provided by Google AdMob. Where required in your region, Google's consent form is shown, and a <strong>Gizlilik seçenekleri</strong> (Privacy options) row appears under <strong>Gizlilik</strong> (Privacy) in <strong>Ayarlar</strong> (Settings), where you can change your ad preference. This section only appears in regions where it is required.</p>
+                        </div>
+                    </details>
+                    <details>
+                        <summary>I'd like to report a bug or problem.</summary>
+                        <div class="answer">
+                            <p>Please email <a href="mailto:pomora.support@gmail.com?subject=Pomora%20Bug%20Report">pomora.support@gmail.com</a> with:</p>
+                            <ul>
+                                <li>A short description of the problem and the steps that lead to it</li>
+                                <li>Your device model and operating system version (iOS / Android)</li>
+                                <li>A screenshot, if you have one</li>
+                            </ul>
+                        </div>
+                    </details>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="card privacy-card">
+                    <div>
+                        <h2>Privacy Policy</h2>
+                        <p>Learn how your data is handled.</p>
+                    </div>
+                    <a class="btn-outline" href="https://aysenur-kaya.github.io/pomora-privacy-policy/">Read the Privacy Policy →</a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <ul class="footer-links">
+                <li><a href="https://aysenur-kaya.github.io/pomora-privacy-policy/"><span data-lang="tr">Gizlilik Politikası</span><span data-lang="en">Privacy Policy</span></a></li>
+                <li><a href="mailto:pomora.support@gmail.com">pomora.support@gmail.com</a></li>
+            </ul>
+            <p>&copy; 2026 Pomora &middot; <span data-lang="tr">Geliştirici: Ayşenur Kaya</span><span data-lang="en">Developer: Ayşenur Kaya</span></p>
+        </div>
+    </footer>
+
+    <script>
+        (function () {
+            var TITLES = {
+                tr: 'Destek - Pomora: Focus Timer & Study',
+                en: 'Support - Pomora: Focus Timer & Study'
+            };
+            var buttons = document.querySelectorAll('[data-set-lang]');
+
+            function applyLang(lang) {
+                document.documentElement.lang = lang;
+                document.title = TITLES[lang];
+                buttons.forEach(function (b) {
+                    b.setAttribute('aria-pressed', String(b.getAttribute('data-set-lang') === lang));
+                });
+            }
+
+            buttons.forEach(function (b) {
+                b.addEventListener('click', function () {
+                    var lang = b.getAttribute('data-set-lang');
+                    applyLang(lang);
+                    try { localStorage.setItem('pomora-privacy-lang', lang); } catch (e) { /* yoksay */ }
+                });
+            });
+
+            applyLang(document.documentElement.lang === 'en' ? 'en' : 'tr');
+        })();
+    </script>
+</body>
+</html>
