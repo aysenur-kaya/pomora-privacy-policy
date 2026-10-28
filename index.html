@@ -814,7 +814,7 @@
                 <div class="hero-meta">
                     <div class="hero-meta-item">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-                        <span><strong>Yürürlük Tarihi:</strong> 7 Ekim 2026</span>
+                        <span><strong>Yürürlük Tarihi:</strong> 28 Ekim 2026</span>
                     </div>
                     <div class="hero-meta-item">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
@@ -893,7 +893,7 @@
                                 <li><strong>Uygulama Kategorisi:</strong> Verimlilik / Odak Zamanlayıcısı / Pomodoro Tekniği</li>
                                 <li><strong>Temel Amaç:</strong> Kullanıcıların çalışma/ders aralıklarını yönetmesine, Pomodoro tekniğiyle odaklanmasını artırmasına ve günlük verimliliğini en üst düzeye çıkarmasına yardımcı olmak.</li>
                                 <li><strong>Platformlar:</strong> Android (Google Play) ve iOS (App Store)</li>
-                                <li><strong>Son Güncelleme:</strong> 7 Ekim 2026</li>
+                                <li><strong>Son Güncelleme:</strong> 28 Ekim 2026</li>
                             </ul>
                         </div>
                     </section>
@@ -981,7 +981,7 @@
                             <p>Reklamlar talep edilip gösterildiğinde Google Mobile Ads SDK, bazı bilgileri doğrudan cihazınızdan toplar ve Google’a gönderir. Google’ın belgelerine göre bu bilgiler şunları içerebilir:</p>
                         
                             <ul>
-                                <li><strong>Cihaz ve reklam kimlikleri:</strong> Android’de Reklam Kimliği (Advertising ID) ve uygulama grubu kimliği (app set ID). iOS’ta satıcı kimliği (IDFV). iOS’ta reklam kimliği (IDFA), yalnızca Apple’ın Uygulama Takip Şeffaflığı (App Tracking Transparency) istemi aracılığıyla izin vermeniz halinde bir uygulamanın kullanımına açılır; Pomora şu anda bu istemi göstermemektedir.</li>
+                                <li><strong>Cihaz ve reklam kimlikleri:</strong> Android’de Reklam Kimliği (Advertising ID) ve uygulama grubu kimliği (app set ID). iOS’ta satıcı kimliği (IDFV). iOS’ta reklam kimliği (IDFA), yalnızca Apple’ın Uygulama Takip Şeffaflığı (App Tracking Transparency, ATT) istemi aracılığıyla izin vermeniz halinde Pomora’nın reklam SDK’sının kullanımına açılır (aşağıya bakın). İzin vermezseniz IDFA kullanılamaz.</li>
                                 <li><strong>IP adresi:</strong> Cihazınızın genel (yaklaşık) konumunu tahmin etmek için kullanılabilir.</li>
                                 <li><strong>Ürün etkileşimi verileri:</strong> Uygulama açılışları, reklam gösterimleri ve reklamlara dokunmalar gibi.</li>
                                 <li><strong>Tanılama bilgileri:</strong> Reklam SDK’sıyla ilgili çökme kayıtları ve performans verileri gibi.</li>
@@ -1006,11 +1006,18 @@
                             <ul>
                                 <li><strong>Uygulama içi gizlilik seçenekleri (AEA, Birleşik Krallık ve İsviçre):</strong> Onay mesajı sizin için geçerliyse Pomora’da Ayarlar &gt; Gizlilik &gt; Gizlilik seçenekleri bölümünden mesajı yeniden açabilir ve onay tercihlerinizi değiştirebilirsiniz.</li>
                                 <li><strong>Android:</strong> Cihaz ayarlarınızdan Reklam Kimliğinizi sıfırlayabilir veya silebilir ya da kişiselleştirilmiş reklamları devre dışı bırakabilirsiniz (cihazınıza bağlı olarak örneğin Ayarlar &gt; Google &gt; Reklamlar veya Ayarlar &gt; Gizlilik &gt; Reklamlar).</li>
-                                <li><strong>iOS:</strong> Hangi uygulamaların sizi izlemek (tracking) için izin isteyebileceğini Ayarlar &gt; Gizlilik ve Güvenlik &gt; İzleme bölümünden yönetebilirsiniz.</li>
+                                <li><strong>iOS:</strong> Hangi uygulamaların sizi izlemek (tracking) için izin isteyebileceğini Ayarlar &gt; Gizlilik ve Güvenlik &gt; İzleme bölümünden yönetebilirsiniz. Pomora için verdiğiniz veya reddettiğiniz takip iznini istediğiniz zaman buradan değiştirebilirsiniz.</li>
                                 <li><strong>Google reklam ayarları:</strong> Google Hesabınız için reklam kişiselleştirmesini <a href="https://myadcenter.google.com/" target="_blank" rel="noopener noreferrer">Reklam Merkezim (My Ad Center)</a> üzerinden yönetebilirsiniz.</li>
                                 <li><strong>Tüm veri toplamayı durdurma:</strong> Uygulamayı kaldırmak, uygulama ve reklam SDK’sı tarafından yapılan tüm veri toplamayı durdurur.</li>
                             </ul>
-                            <p>Pomora şu anda iOS’ta Apple’ın Uygulama Takip Şeffaflığı (App Tracking Transparency, ATT) iznini istememektedir. Yukarıda açıklanan onay mesajı Google UMP tarafından yönetilir ve Apple’ın ATT isteminden ayrıdır; ATT izni olmadan reklam kimliği (IDFA) uygulamanın kullanımına açılmaz. Bu durum ileride değişirse bu Gizlilik Politikası’nı buna göre güncelleyeceğiz.</p>
+                            <p><strong>iOS: Uygulama Takip Şeffaflığı (ATT) ve Google UMP</strong></p>
+                            <p>iOS’ta Pomora, reklamlar için gerekli olduğunda Apple’ın Uygulama Takip Şeffaflığı (App Tracking Transparency, ATT) istemini gösterir. Bu istem, yukarıda açıklanan Google UMP onay mesajından <strong>ayrı bir izin mekanizmasıdır</strong>: UMP, bulunduğunuz bölgedeki yasal gerekliliklere göre reklam ve veri kullanımı tercihlerinizi yönetir; ATT ise Apple tarafından, uygulamanın sizi diğer şirketlerin uygulama ve web sitelerinde izlemesine ve cihazınızın reklam kimliğine (IDFA) erişmesine izin verip vermediğinizi sormak için gösterilir. İkisi aynı anda gösterilmez: önce (gerekliyse) UMP mesajı, ardından — reklam istenebiliyorsa ve henüz yanıtlamadıysanız — ATT istemi gösterilir.</p>
+                            <ul>
+                                <li><strong>İzin verirseniz:</strong> IDFA, Google Mobile Ads SDK tarafından reklam göstermek, reklamları kişiselleştirmek ve reklam performansını ölçmek için kullanılabilir. Apple’ın tanımına göre bu, uygulamalar arası takip (tracking) sayılabilir.</li>
+                                <li><strong>İzin vermezseniz:</strong> IDFA kullanılmaz ve bu kimlik üzerinden takip yapılmaz. Reklamlar yine de gösterilebilir; ancak bu reklamlar IDFA’ya dayalı olarak kişiselleştirilmez. Google, reklam sunmak ve ölçmek, dolandırıcılığı önlemek ve sorunları tespit etmek için IDFA dışındaki bilgileri (örneğin IP adresi, satıcı kimliği (IDFV), cihaz ve uygulama bilgileri) yukarıda anlatıldığı şekilde kullanmaya devam edebilir.</li>
+                                <li><strong>Seçiminiz uygulamanın diğer özelliklerini etkilemez.</strong> Pomora’nın zamanlayıcı ve diğer özellikleri, takip izni verseniz de vermeseniz de aynı şekilde çalışır.</li>
+                            </ul>
+                            <p>Takip izninizi istediğiniz zaman iOS’ta Ayarlar &gt; Gizlilik ve Güvenlik &gt; İzleme bölümünden değiştirebilirsiniz. ATT istemi yalnızca bir kez gösterilir; uygulamayı silip yeniden yüklemediğiniz sürece sistem aynı soruyu tekrar sormaz.</p>
                         </div>
                     </section>
 
@@ -1097,7 +1104,7 @@
                 <div class="hero-meta">
                     <div class="hero-meta-item">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-                        <span><strong>Effective Date:</strong> October 7, 2026</span>
+                        <span><strong>Effective Date:</strong> October 28, 2026</span>
                     </div>
                     <div class="hero-meta-item">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
@@ -1176,7 +1183,7 @@
                                 <li><strong>Application Category:</strong> Productivity / Focus Timer / Pomodoro Technique</li>
                                 <li><strong>Primary Purpose:</strong> Helping users manage work/study intervals, boost concentration through the Pomodoro technique, and maximize daily productivity.</li>
                                 <li><strong>Platforms:</strong> Android (Google Play) and iOS (App Store)</li>
-                                <li><strong>Last Updated:</strong> October 7, 2026</li>
+                                <li><strong>Last Updated:</strong> October 28, 2026</li>
                             </ul>
                         </div>
                     </section>
@@ -1264,7 +1271,7 @@
                             <p>When ads are requested and shown, the Google Mobile Ads SDK collects certain information directly from your device and sends it to Google. According to Google's documentation, this may include:</p>
                         
                             <ul>
-                                <li><strong>Device and advertising identifiers:</strong> On Android, the Advertising ID and app set ID. On iOS, the identifier for vendors (IDFV). On iOS, the advertising identifier (IDFA) is only available to an app if you grant permission through Apple's App Tracking Transparency prompt; Pomora does not currently show this prompt.</li>
+                                <li><strong>Device and advertising identifiers:</strong> On Android, the Advertising ID and app set ID. On iOS, the identifier for vendors (IDFV). On iOS, the advertising identifier (IDFA) is only made available to Pomora's advertising SDK if you grant permission through Apple's App Tracking Transparency (ATT) prompt (see below). If you do not grant permission, the IDFA cannot be used.</li>
                                 <li><strong>IP address:</strong> Which may be used to estimate the general (approximate) location of your device.</li>
                                 <li><strong>Product interaction data:</strong> Such as app launches, ad impressions, and taps on ads.</li>
                                 <li><strong>Diagnostic information:</strong> Such as crash logs and performance data related to the ad SDK.</li>
@@ -1289,11 +1296,18 @@
                             <ul>
                                 <li><strong>In-app privacy options (EEA, UK, and Switzerland):</strong> If the consent message applies to you, you can reopen it and change your consent choices in Pomora under Settings (Ayarlar) &gt; Privacy (Gizlilik) &gt; Privacy options (Gizlilik seçenekleri).</li>
                                 <li><strong>Android:</strong> You can reset or delete your Advertising ID, or opt out of ads personalization, in your device settings (for example, Settings &gt; Google &gt; Ads, or Settings &gt; Privacy &gt; Ads, depending on your device).</li>
-                                <li><strong>iOS:</strong> You can manage which apps may request to track you under Settings &gt; Privacy &amp; Security &gt; Tracking.</li>
+                                <li><strong>iOS:</strong> You can manage which apps may request to track you under Settings &gt; Privacy &amp; Security &gt; Tracking. You can change the tracking permission you gave or declined for Pomora there at any time.</li>
                                 <li><strong>Google ad settings:</strong> You can manage ad personalization for your Google Account at <a href="https://myadcenter.google.com/" target="_blank" rel="noopener noreferrer">My Ad Center</a>.</li>
                                 <li><strong>Stop all collection:</strong> Uninstalling the app stops all data collection by the app and the advertising SDK.</li>
                             </ul>
-                            <p>Pomora does not currently request Apple’s App Tracking Transparency (ATT) permission on iOS. The consent message described above is managed by Google UMP and is separate from Apple’s ATT prompt; without ATT permission, the advertising identifier (IDFA) is not made available to the app. If this changes in the future, we will update this Privacy Policy accordingly.</p>
+                            <p><strong>iOS: App Tracking Transparency (ATT) and Google UMP</strong></p>
+                            <p>On iOS, Pomora shows Apple's App Tracking Transparency (ATT) prompt when this is needed for ads. This prompt is a <strong>separate permission mechanism</strong> from the Google UMP consent message described above: UMP manages your advertising and data-use choices according to the legal requirements in your region, while ATT is shown by Apple to ask whether the app may track you across other companies' apps and websites and access your device's advertising identifier (IDFA). The two are never shown at the same time: first the UMP message (if required), then — if ads can be requested and you have not answered yet — the ATT prompt.</p>
+                            <ul>
+                                <li><strong>If you allow:</strong> The IDFA may be used by the Google Mobile Ads SDK to show ads, to personalize ads, and to measure ad performance. Under Apple's definition, this may count as tracking across apps.</li>
+                                <li><strong>If you do not allow:</strong> The IDFA is not used and no tracking is carried out through this identifier. Ads may still be shown, but they are not personalized based on the IDFA. Google may continue to use information other than the IDFA (for example the IP address, the identifier for vendors (IDFV), and device and app information) as described above to deliver and measure ads, prevent fraud, and diagnose problems.</li>
+                                <li><strong>Your choice does not affect the rest of the app.</strong> Pomora's timer and other features work the same whether or not you allow tracking.</li>
+                            </ul>
+                            <p>You can change your tracking permission at any time on iOS under Settings &gt; Privacy &amp; Security &gt; Tracking. The ATT prompt is shown only once; unless you delete and reinstall the app, the system will not ask the same question again.</p>
                         </div>
                     </section>
 
